@@ -1,6 +1,6 @@
-# eMasa v2
+# eKehadiran
 
-Penambahbaikan sistem eMasa.
+Penambahbaikan sistem eKehadiran.
 
 ### Installing
 
@@ -20,5 +20,5 @@ composer install --no-dev
 
 ## Built With
 
-* [Laravel](http://www.laravel.com) - The web framework used
-"# ekehadiran" 
+- [Laravel](http://www.laravel.com) - The web framework used
+  "# ekehadiran"
