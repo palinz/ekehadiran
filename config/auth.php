@@ -14,7 +14,7 @@ return [
  */
 
     'defaults' => [
-        'guard' => 'mohr',
+        'guard' => 'web',
         'passwords' => 'users',
     ],
 
@@ -36,25 +36,15 @@ return [
      */
 
     'guards' => [
-        'mohr' => [
+        'web' => [
             'driver' => 'session',
-            'provider' => 'mohr',
+            'provider' => 'users',
         ],
 
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
         ],
-        
-        /* 'internal' => [
-            'driver' => 'session',
-            'provider' => 'pcrs',
-        ], */
-
-        /* 'ldap' => [
-            'driver' => 'session',
-            'provider' => 'ldap',
-        ], */
     ],
 
     /*
@@ -78,18 +68,6 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
-        ],
-
-        'pcrs' => [
-            'driver' => 'pcrs',
-        ],
-
-        'ldap' => [
-            'driver' => 'ldap',
-        ],
-
-        'mohr' => [
-            'driver' => 'mohr',
         ],
     ],
 
