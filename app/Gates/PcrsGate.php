@@ -43,7 +43,7 @@ class PcrsGate
         //Laporan
         Gate::define('view-laporan', $this->minPrivilege(Role::KETUA_KERANI));
 
-        // Konfigurasi
+        // Konfigurasi        
         Gate::define('view-setting', $this->minPrivilege(Role::KETUA_KERANI));
         Gate::define('view-flow-bahagian-setting', $this->minPrivilege(Role::KETUA_KERANI));
         Gate::define('edit-flow-bahagian-setting', $this->minPrivilege(Role::KETUA_KERANI));

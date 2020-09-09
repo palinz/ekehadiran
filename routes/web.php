@@ -132,7 +132,7 @@ Route::middleware('auth')->group(function () {
             Route::post('/flow_bahagian/{department}', 'KonfigurasiController@rpcFlowBahagianUpdate')->middleware('can:edit-flow-bahagian-setting');
         });
 
-        Route::get('/puasa', 'PuasaController@index')->middleware('can:view-puasa');
+        Route::get('/puasa', 'PuasaController@index');
         Route::post('/puasa', 'PuasaController@store')->middleware('can:add-puasa');
         Route::delete('/puasa/{puasa}', 'PuasaController@destroy')->middleware('can:delete-puasa');
 

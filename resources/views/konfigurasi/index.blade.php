@@ -76,6 +76,7 @@
                                             </td>
                                             <td style="width: 60%">
                                                 <table class="table" style="width: 100%; background-color: transparent;">
+                                                    @can('add-puasa')
                                                     <tr>
                                                         <td>
                                                             <input type="text" id="tkhPuasaMula" name="txtMula" class="form-control" placeholder="Tarikh Mula" v-model="tkhMula">
@@ -87,16 +88,22 @@
                                                             <button class="btn btn-info" @click="updateTarikh">Simpan</button>
                                                         </td>
                                                     </tr>
+                                                    @endcan
                                                     <tr>
                                                         <td colspan="3">
-                                                            <ol>
+                                                            <ol v-if="senPuasa.length">
                                                             <li v-for="puasa of senPuasa" :key="puasa" >
-                                                                Mula: @{{ puasa.tkhmula }} - Tamat: @{{ puasa.tkhtamat }}&nbsp;
+                                                                <span v-cloak>Mula: @{{ puasa.tkhmula }} - Tamat: @{{ puasa.tkhtamat }}&nbsp;</span>
+                                                                @can('delete-puasa')
                                                                 <a title="Hapus Peranan" class="btn btn-danger btn-xs" @click="deleteTarikh(puasa.id)">
                                                                     <i class="fa fa-trash-o"></i>
                                                                 </a>
+                                                                 @endcan
                                                             </li>
                                                             </ol>
+                                                            <p v-else>
+                                                                Tiada Maklumat
+                                                            </p>
                                                         </td>
                                                     </tr>
                                                 </table>
