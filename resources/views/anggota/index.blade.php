@@ -95,7 +95,7 @@
               <!-- /.box-tools -->
             </div>
             <div class="box-body">
-
+                <div id="calendar"></div>
             </div>
         </div>
         <!-- End box -->
@@ -2214,6 +2214,8 @@
             $('#konfigurasi').toggle();
         });
 
+        var cal = "";
+
         $('#dg-anggota').on('click', '#detail-info', function() {
             var parent = $(this).parent().parent();
 
@@ -2222,15 +2224,71 @@
             mProfil.deptId = parent.data('deptid');
             mProfil.deptName = parent.data('deptname');
 
-            //console.log(mProfil);
+            cal = $('#calendar').fullCalendar({
+                firstDay: 1,
+                showNonCurrentDates: false,
+                customButtons: {
+                    aktiviti: {
+                        text: 'Tambah Aktiviti',
+                        click: function() {
+                            $('#modal-default').modal({backdrop: 'static',});
+                        }
+                    },
+                    laporan: {
+                        text: 'Laporan Bulanan',
+                        click: function() {
+                            exportPDF(
+                                _.filter(gEvents.data, { 'table': 'final' })
+                            );
+                        }
+                    }
+                },
+                header: {
+                    right: 'prev,today,next'
+                },
+                dayClick: function(date, jsEvent, view) {
+                    var modal = $('#modal-acara-anggota');
+                    dateClick = date;
+
+                    modal.find('.modal-title').html("MAKLUMAT ACARA PADA : " + date.format('D MMMM YYYY').toUpperCase());
+                    modal.modal({backdrop: 'static',keyboard: false});
+                },
+                events: function(start, end, timezone, callback) {
+                    $.ajax({
+                        url: base_url+'rpc/kalendar/'+mProfil.userId,
+                        data: {
+                            start: start.toISOString(),
+                            end: end.toISOString()
+                        },
+                        success: function(events) {
+                            //gEvents = events;
+                            callback(events.data);
+                        }
+                    });
+                },
+                /* loading: function(isLoading, view)
+                {
+                    if (isLoading)
+                        $('.overlay').show();
+                    else
+                        $('.overlay').hide();
+                }, */
+                eventRender: function(event, element, view ) {
+                    element.find('.fc-title').html(event.title);
+                },
+            });
+        
             $('#detail-info-personal').show();
             $('#grid-wrapper').hide();
+            cal.fullCalendar('render');
 
         });
 
         $('#detail-info-personal').on('click', '#back-wrapper', function(e) {
+            $("#calendar").html("");
             $('#grid-wrapper').show();
             $('#detail-info-personal').hide();
+            cal.fullCalendar('destroy');
         });
 
         function openModal(modal, header)

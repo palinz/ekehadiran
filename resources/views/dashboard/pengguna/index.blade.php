@@ -100,12 +100,12 @@
                 firstDay: 1,
                 showNonCurrentDates: false,
                 customButtons: {
-                    /*aktiviti: {
+                    aktiviti: {
                         text: 'Tambah Aktiviti',
                         click: function() {
                             $('#modal-default').modal({backdrop: 'static',});
                         }
-                    },*/
+                    },
                     laporan: {
                         text: 'Laporan Bulanan',
                         click: function() {
