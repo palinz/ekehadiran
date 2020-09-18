@@ -412,12 +412,11 @@
                 })
             }
 
-            function exportPDF(result) {
+                        function exportPDF(result) {
                 try {     
                     var doc = new jsPDF('p', 'pt', 'a4');
-                    
-                    var head = [["Tarikh", "Check-In", "Check-Out", "Catatan"]];
-                    var body = result.map((item)=>[moment(item.start).format("DD-MM-YYYY"), (item.checkIn) ? moment(item.checkIn).format("h:mm A") : '', (item.checkOut) ? moment(item.checkOut).format("h:mm A") : '', '']);
+                    var head = [["TARIKH", "MASUK", "KELUAR", "JAM", "KESALAHAN", "CATATAN", "TT"]];
+                    var body = dataProvider(result);
                     
                     var totalPagesExp = "{total_pages_count_string}";
 
@@ -426,25 +425,68 @@
                         body,
                         theme: 'grid',
                         showHead: 'firstPage',
-                        margin: {top: 80},
+                        margin: {top: 65, bottom: 85},
+                        headStyles: {fontSize: 8},
                         columnStyles: {
-                            0: {cellWidth:1},
-                            1: {cellWidth:1},
-                            2: {cellWidth:1},
-                            3: {cellWidth:'auto'}
+                            0: {cellWidth: 50, fontSize:8},
+                            1: {halign: "center", fontSize:8},
+                            2: {halign: "center",  fontSize:8},
+                            3: {halign: "center",  fontSize:8},
+                            4: {cellWidth: 80,  fontSize:8},
+                            5: {cellWidth: 170,  fontSize:8}
                         },
-                        didParseCell: function(data) {
+                        didParseCell: function(data) {                            
+                            if (data.row.section == 'head') {
+                                data.cell.styles.fillColor = [54, 54, 54];
+                                data.cell.styles.halign = "center";
+
+                                if(data.column.dataKey === '0') {
+                                    data.cell.styles.halign = "left";
+                                }
+
+                                if(data.column.dataKey === '4') {
+                                    data.cell.styles.halign = "left";
+                                }
+                            }
+                      
                             if(moment(result[data.row.index].start).format('d') === '0' || moment(result[data.row.index].start).format('d') === '6' || result[data.row.index].cuti ) {
-                                if (data.row.index === data.row.index) {
+                                if (data.row.section == 'body') {
                                     data.cell.styles.fillColor = [240, 240, 240];
                                 }
                             }
 
                             if (data.row.section === 'body' && data.column.dataKey === '0') {
-                                data.cell.text = moment(result[data.row.index].start).format('DD-MMM-YYYY (ddd)');
+                                data.cell.text = moment(result[data.row.index].start).format('DD (ddd)');
                             }
 
-                            if (data.row.section === 'body' && data.column.dataKey === '3') {
+                            if (data.row.section === 'body' && data.column.dataKey === '4') {
+                                var justifikasi = '';
+                                
+                                if(result[data.row.index].tatatertib_flag === 'TS') {
+                                    var kesalahan = JSON.parse(result[data.row.index].kesalahan);
+
+                                    kesalahan.forEach(function(item, index) {
+                                        switch(item) {
+                                            case 'NONEIN':
+                                                justifikasi += "Pg : Tiada rekod\n";
+                                            break;
+                                            case 'LEWAT':
+                                                justifikasi += "Pg : Hadir lewat\n";
+                                            break;
+                                            case 'NONEOUT':
+                                                justifikasi += "Ptg : Tiada rekod\n";
+                                            break;
+                                            case 'AWAL':
+                                                justifikasi += "Ptg : Pulang awal\n";
+                                            break;
+                                        }
+                                    });                                    
+                                }
+
+                                data.cell.text = justifikasi;
+                            }
+
+                            if (data.row.section === 'body' && data.column.dataKey === '5') {
                                 var justifikasi = '';
                                 
                                 if(result[data.row.index].cuti) {
@@ -453,16 +495,18 @@
 
                                 if(result[data.row.index].justifikasi) {
                                     result[data.row.index].justifikasi.forEach(function(item, index) {
-                                        if(index === 0 && item.flag_kelulusan === 'LULUS') {
+                                        //if(index === 0 && item.flag_kelulusan === 'LULUS') {
+                                        if(index === 0) {
                                             if(item.flag_justifikasi === 'SAMA') {
-                                                justifikasi += "Justifikasi : " + item.keterangan + "\n";
+                                                justifikasi += "J : " + item.keterangan + "\n";
                                             } else {
-                                                justifikasi += "Justifikasi Pagi : " + item.keterangan + "\n";
+                                                justifikasi += "JPG : " + item.keterangan + "\n";
                                             }
                                         }
 
-                                        if(index === 1 && item.flag_kelulusan === 'LULUS' && item.flag_justifikasi === 'XSAMA') {
-                                            justifikasi += "Justifikasi Petang : " + item.keterangan + "\n";
+                                        //if(index === 1 && item.flag_kelulusan === 'LULUS' && item.flag_justifikasi === 'XSAMA') {
+                                        if(index === 1 && item.flag_justifikasi === 'XSAMA') {
+                                            justifikasi += "JPTG : " + item.keterangan + "\n";
                                         }
                                     });
                                 }
@@ -471,19 +515,18 @@
                             }
                         },
                         didDrawPage: function (data) {
-                            // Header
-                            doc.setFontSize(16);
-                            doc.setTextColor(40);
-                            doc.setFontStyle('normal');
                             /* if (base64Img) {
                                 doc.addImage(base64Img, 'JPEG', data.settings.margin.left, 15, 10, 10);
                             } */                        
-                            doc.setFontSize(12);
-                            doc.text("LAPORAN KEHADIRAN BULANAN", data.settings.margin.left, 30);
-                            doc.text("Nama : " + "{{ Auth::user()->xtraAnggota->nama }}", data.settings.margin.left, 45);
-                            doc.text("Jabatan/ Bahagian/ Unit : " + "{{ Auth::user()->xtraAnggota->department->deptname }}", data.settings.margin.left, 60);
-                            doc.text("Bulan : " + cal.fullCalendar('getDate').format('MMMM YYYY'), data.settings.margin.left, 75);
+                            doc.setFontSize(9);
+                            doc.setFontStyle('normal');
 
+                            doc.text("LAPORAN KEHADIRAN BULANAN", data.settings.margin.left, 30);
+                            doc.text("Nama : " + "{{ Auth::user()->xtraAnggota->nama }}", data.settings.margin.left, 40);
+                            doc.text("Jabatan/ Bahagian/ Unit : " + "{{ Auth::user()->xtraAnggota->department->deptname }}", data.settings.margin.left, 50);
+                            doc.text("Bulan : " + cal.fullCalendar('getDate').format('MMMM YYYY'), data.settings.margin.left, 60);
+
+                            doc.setFontSize(9);
                             // Footer
                             var str = "Muka " + doc.internal.getNumberOfPages()
 
@@ -491,15 +534,21 @@
                             if (typeof doc.putTotalPages === 'function') {
                                 str = str + " drp " + totalPagesExp;
                             }
+
                             doc.setFontSize(9);
 
                             // jsPDF 1.4+ uses getWidth, <1.4 uses .width
                             var pageSize = doc.internal.pageSize;
                             var pageHeight = pageSize.height ? pageSize.height : pageSize.getHeight();
                             var pageWidth = doc.internal.pageSize.width ? doc.internal.pageSize.width : doc.internal.pageSize.getWidth();
+                            
+                            doc.text("T/ T PEGAWAI", data.settings.margin.left, pageHeight - 70);
+                            doc.writeText(data.settings.margin.left - 80, pageHeight - 70 , "T/ T KETUA UNIT/ BAHAGIAN", { align: 'right' });
+                            doc.text("Tarikh :", data.settings.margin.left, pageHeight - 40);
+                            doc.writeText(data.settings.margin.left - 175, pageHeight - 40 , "Tarikh :", { align: 'right' });
 
-                            doc.text("{{ env('APP_NAME') }}", data.settings.margin.left, pageHeight - 20);
-                            doc.text("Dicetak pada : "+moment().format("lll"), data.settings.margin.left, pageHeight - 10, 'left');
+                            doc.text("Dicetak pada : "+moment().format("lll")+", Oleh : {{(Auth::user()->xtraAnggota) ? Auth::user()->xtraAnggota->nama : Auth::user()->name }}", data.settings.margin.left, pageHeight - 20, 'left');
+                            doc.text("{{ env('APP_NAME') }}", data.settings.margin.left, pageHeight - 10);
                             doc.writeText(data.settings.margin.left + 20, pageHeight - 10 ,str, { align: 'right' });
                         }
                     });
@@ -519,6 +568,17 @@
                         type: 'error'
                     });
                 }
+            }
+
+            function dataProvider(result) {
+                return result.map((item)=>[
+                    moment(item.start).format("DD-MM"),
+                    (item.checkIn) ? moment(item.checkIn).format("h:mm A") : '',
+                    (item.checkOut) ? moment(item.checkOut).format("h:mm A") : '',
+                    item.jumlah_jam,
+                    '',
+                    ''
+                ]);
             }
         });
     </script>
