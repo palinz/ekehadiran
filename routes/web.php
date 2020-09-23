@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function () {
     //Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/dashboard', 'KalendarController@index')->name('dashboard');
     Route::get('/kalendar', 'KalendarController@index')->name('kalendar');
+    Route::get('/minitcurai', 'MinitCuraiController@index')->name('minit_curai');
 
     Route::middleware('can:view-anggota')->group(function () {
         Route::get('/anggota', 'AnggotaController@index')->name('anggota');

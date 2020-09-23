@@ -10,6 +10,11 @@
             <i class="fa fa-dashboard"></i></i> <span>Dashboard</span>
           </a>
         </li>
+        <li class="{{ pcrsMenuActiveCondition('minitcuraicontroller_index', $collection->get('activeMenu')) }}">
+          <a href="{{ route('minit_curai') }}">
+            <i class="fa fa-folder-open"></i></i> <span>Minit Curai</span>
+          </a>
+        </li>
         @can('view-kelulusan')
         <li class="{{ pcrsMenuActiveCondition('kelulusancontroller_index', $collection->get('activeMenu')) }}">
           <a href="{{ route('kelulusan') }}">
