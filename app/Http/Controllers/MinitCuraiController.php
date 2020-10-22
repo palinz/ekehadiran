@@ -74,6 +74,9 @@ class MinitCuraiController extends BaseController
 
     public function send(MinitCurai $minitCurai)
     {
+        $minitCurai->flag = MinitCurai::HANTAR;
+        $minitCurai->save();
+
         $minitCurai->minitCurai_flow()->save(new MinitCuraiFlow([
             'from_anggota_id' => Auth::user()->anggota_id,
             'to_anggota_id' => Flow::pelulus(Auth::user()->anggota)->xtraAttr->anggota_id

@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class MinitCurai extends Model
 {
+    const DERAF = 'DERAF';
+    const HANTAR = 'HANTAR';
+    const PULANG = 'PULANG';
+    const SAH = 'SAH';
+
     protected $table = 'minitcurai';
 
     protected $fillable = [
@@ -31,6 +36,5 @@ class MinitCurai extends Model
 
     public static function involvement()
     {
-        
     }
 }
