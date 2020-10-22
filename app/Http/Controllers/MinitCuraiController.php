@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Flow;
 use Auth;
 use Carbon\Carbon;
 use App\MinitCurai;
+use App\MinitCuraiFlow;
 use Illuminate\Http\Request;
 use App\Base\BaseController;
 
@@ -44,10 +46,14 @@ class MinitCuraiController extends BaseController
         ]); */
 
         $perPage = 10;
-        $created = MinitCurai::where("anggota_id", Auth::user()->anggota_id)->orderBy('created_at', 'desc')
-            ->paginate($perPage);
+        $created = MinitCurai::where("anggota_id", Auth::user()->anggota_id)->orderBy('created_at', 'desc');
+        $involve = MinitCurai::select("minitcurai.*")->join("minitcurai_flow", "minitcurai.id", "=",  "minitcurai_flow.minitcurai_id")
+            ->where("minitcurai_flow.to_anggota_id", Auth::user()->anggota_id);
+        $involve->union($created);
 
-        return view('minitcurai.grid', compact('created'));
+        $union = $involve->paginate($perPage);
+
+        return view('minitcurai.grid', compact('union'));
     }
 
     public function edit(MinitCurai $minitCurai)
@@ -68,5 +74,9 @@ class MinitCuraiController extends BaseController
 
     public function send(MinitCurai $minitCurai)
     {
+        $minitCurai->minitCurai_flow()->save(new MinitCuraiFlow([
+            'from_anggota_id' => Auth::user()->anggota_id,
+            'to_anggota_id' => Flow::pelulus(Auth::user()->anggota)->xtraAttr->anggota_id
+        ]));
     }
 }

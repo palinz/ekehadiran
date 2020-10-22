@@ -9,9 +9,9 @@
         </tr>
     </thead>
     <tbody>
-        @forelse ($created as $minit)
+        @forelse ($union as $minit)
             <tr class="row-user">
-                <td>{{ ($created->currentpage()-1) * $created->perpage() + $loop->index + 1 }}</td>
+                <td>{{ ($union->currentpage()-1) * $union->perpage() + $loop->index + 1 }}</td>
                 <td>{{ $minit->tajuk }}</td>
                 <td>{{ $minit->anjuran }}</td>
                 <td>{{ $minit->flag }}</td>
@@ -25,9 +25,9 @@
     </tbody>
 </table>
 
-@if ($created->total())
+@if ($union->total())
     <div class="clearfix">
-        <span style="display: inline-block; vertical-align: middle; line-height: normal;">Papar {{ ($created->currentPage() * $created->perpage()) - ($created->perpage() - 1) }}  hingga {{ ($created->hasMorePages()) ? ($created->currentPage() * $created->perpage()) : $created->total() }}  daripada {{ $created->total() }} rekod</span>
-        {{ $created->links() }}
+        <span style="display: inline-block; vertical-align: middle; line-height: normal;">Papar {{ ($union->currentPage() * $union->perpage()) - ($union->perpage() - 1) }}  hingga {{ ($union->hasMorePages()) ? ($union->currentPage() * $union->perpage()) : $union->total() }}  daripada {{ $union->total() }} rekod</span>
+        {{ $union->links() }}
     </div>
 @endif

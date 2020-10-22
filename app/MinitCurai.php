@@ -28,4 +28,9 @@ class MinitCurai extends Model
         $mc = self::create($fields->except(['from_anggota_id', 'to_anggota_id'])->toArray());
         $mc->minitCurai_flow()->save(new MinitCuraiFlow($fields->only(['from_anggota_id', 'to_anggota_id'])->toArray()));
     }
+
+    public static function involvement()
+    {
+        
+    }
 }
