@@ -137,9 +137,16 @@ Route::middleware('auth')->group(function () {
         Route::post('/puasa', 'PuasaController@store')->middleware('can:add-puasa');
         Route::delete('/puasa/{puasa}', 'PuasaController@destroy')->middleware('can:delete-puasa');
 
-
         // Justifikasi
         Route::post('/justifikasi/{profil}', 'JustifikasiController@rpcStore');
         Route::put('/justifikasi/{justifikasi}', 'JustifikasiController@rpcUpdate');
+
+        // minit curai
+        Route::post('/minitcurai/grid', 'MinitCuraiController@grid');
+        Route::get('/minitcurai/create', 'MinitCuraiController@create');
+        Route::post('/minitcurai/store', 'MinitCuraiController@store');
+        Route::get('/minitcurai/{minitCurai}/edit', 'MinitCuraiController@edit');
+        Route::patch('/minitcurai/{minitCurai}/edit', 'MinitCuraiController@update');
+        Route::post('/minitcurai/{minitCurai}/send', 'MinitCuraiController@send');
     });
 });

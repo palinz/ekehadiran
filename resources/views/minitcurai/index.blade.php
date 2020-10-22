@@ -28,7 +28,7 @@
               <i class="fa fa-times"></i></button>
           </div> --}}
         </div>
-        <div class="box-body">
+        <div class="box-body" id="minit-curai-a">
           <div class="row" style="margin:0;">
             <div class="col-lg-12">
               <div class="pull-right" style="padding-bottom:5px;">
@@ -54,29 +54,51 @@
            </div>
           </div>
         </div>
+        <div class="overlay">
+            <i class="fa fa-refresh fa-spin"></i>
+        </div>
       </div>
       <!-- /.box -->
 
-      <!-- Modal --> 
-    <div class="modal fade" id="modal-minit-curai">
-        <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Cipta Minit Curai</h4>
+        <!-- Modal --> 
+        <div class="modal fade" id="modal-minit-curai">
+            <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Cipta Minit Curai</h4>
+                </div>
+
+                <div class="modal-body">
+                <h4><i class="fa fa-refresh fa-spin"></i> Loading...</h4>
+                </div>
             </div>
-            <div class="modal-body">
-                <h4>
-                    <i class="fa fa-refresh fa-spin"></i> Loading...
-                </h4>
+            <!-- /.modal-content -->
             </div>
+            <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal-content -->
+        <!-- /.modal -->
+
+        <!-- Modal --> 
+        <div class="modal fade" id="modal-edit-minit-curai">
+            <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Kemaskini Minit Curai</h4>
+                </div>
+
+                <div class="modal-body">
+                <h4><i class="fa fa-refresh fa-spin"></i> Loading...</h4>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
+        <!-- /.modal -->
 
     </section>
     <!-- /.content -->
@@ -85,8 +107,266 @@
 @section('scripts')
     <script>
       $(function() {
+        var minit_id = 0;
+        var url = base_url+'rpc/minitcurai/grid';
+        populateDg(url, '#dg-minit');
+
+        function populateDg(url, place) {
+            $('.overlay').show();
+            $.ajax({
+                method: 'post',
+                url: url,
+                //data: dataSearch,
+                success: function(data, textStatus, jqXHR) {
+                    $(place).html(data);
+                    $('.overlay').hide();
+
+                    /* if(dataSearch.searchKey) {
+                        
+                        $(".table tbody tr").unmark({
+                            done: function() {
+                                $(".table tbody tr").mark(dataSearch.searchKey,{debug: true});
+                            }
+                        });
+                    } */
+
+                    /* $("#search-key").addClear({
+                        onClear: function(e){
+                            $('#top-btn-profil').prop('disabled', true);
+                            $('#top-btn-wp').prop('disabled', true);
+                            $('#top-btn-ppp').prop('disabled', true);
+                            $('#top-btn-more').prop('disabled', true);
+                            $('#top-btn-more').addClass('disabled');
+
+                            dataSearch.searchKey = '';
+                            populateDg(base_url+'rpc/anggota_grid', '#dg-anggota');
+                        }
+                    }); */
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    swal({
+                        title: 'Ralat!',
+                        text: 'Data tidak dapat dipaprkan. Sila cuba lagi',
+                        type: 'error',
+                    }).then(() => $('#modal-default').modal('hide'));
+                },
+                statusCode: login()
+            });
+        }
+
         $('#top-btn-cipta').on('click', function(){
           $('#modal-minit-curai').modal('show');
+        });
+
+        $('#modal-minit-curai').on('show.bs.modal', function (e) {
+            $(this).find('.modal-header').css('backgroundColor','steelblue');
+            $(this).find('.modal-header').css('color','white');
+            //$(this).find('.modal-title').text('PEGAWAI PENILAI : '+mProfil.title);
+            var modalBody = $(this).find('.modal-body');
+            $.ajax({
+              url: base_url+'rpc/minitcurai/create',
+              success: function(data, textStatus, jqXHR) {
+                modalBody.html(data);
+              }
+            })
+        });
+
+        $('#modal-minit-curai').on('submit', "#frm-minit-curai", function (e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+
+            swal({
+                title: 'Amaran!',
+                text: 'Anda pasti untuk menambah maklumat ini?',
+                type: 'warning',
+                cancelButtonText: 'Tidak',
+                showCancelButton: true,
+                confirmButtonText: 'Ya!',
+                showLoaderOnConfirm: true,
+                allowOutsideClick: false,
+                allowOutsideClick: () => !swal.isLoading(),
+                preConfirm: () => {
+                    return new Promise((resolve, reject) => {
+                        
+                        $.ajax({
+                            method: 'post',
+                            data: formData,
+                            cache       : false,
+                            contentType : false,
+                            processData : false,
+                            url: base_url+'rpc/minitcurai/store',
+                            success: function() {
+                                resolve();
+                            },
+                            error: function(err) {
+                                reject(err);
+                            },
+                            statusCode: login()
+                        });
+                    })
+                }
+            }).then((result) => {
+                if (result.value) {
+                    swal({
+                        title: 'Berjaya!',
+                        text: 'Maklumat telah ditambah',
+                        type: 'success'
+                    }).then(() => {$('#modal-minit-curai').modal('hide'); populateDg(url, '#dg-minit');});
+                }
+            }).catch(function (error) {
+                var errorMsg = error.statusText;
+
+                if (error.status == 409) {
+                    errorMsg = 'Rekod telah wujud!';
+                }
+
+                swal({
+                    title: 'Ralat!',
+                    text: errorMsg,
+                    type: 'error'
+                });
+            });
+        });
+        
+        $('#modal-minit-curai').on('hidden.bs.modal', function(e) {
+            e.preventDefault();
+            $(this).find('.modal-body').html('<h4><i class="fa fa-refresh fa-spin"></i> Loading...</h4>');
+        })
+
+        $('#dg-minit').on('click', ".btn-kemaskini", function(e) {
+            e.preventDefault();
+            minit_id = $(this).data('id');
+            $('#modal-edit-minit-curai').modal('show');
+        });
+
+        $('#modal-edit-minit-curai').on('show.bs.modal', function (e) {
+            $(this).find('.modal-header').css('backgroundColor','steelblue');
+            $(this).find('.modal-header').css('color','white');
+            //$(this).find('.modal-title').text('PEGAWAI PENILAI : '+mProfil.title);
+            var modalBody = $(this).find('.modal-body');
+            $.ajax({
+              url: base_url+'rpc/minitcurai/'+minit_id+'/edit',
+              success: function(data, textStatus, jqXHR) {
+                modalBody.html(data);
+              }
+            })
+        });
+
+        $('#modal-edit-minit-curai').on('submit', "#frm-edit-minit-curai", function (e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+
+            swal({
+                title: 'Amaran!',
+                text: 'Anda pasti untuk mengemaskini maklumat ini?',
+                type: 'warning',
+                cancelButtonText: 'Tidak',
+                showCancelButton: true,
+                confirmButtonText: 'Ya!',
+                showLoaderOnConfirm: true,
+                allowOutsideClick: false,
+                allowOutsideClick: () => !swal.isLoading(),
+                preConfirm: () => {
+                    return new Promise((resolve, reject) => {
+                        
+                        $.ajax({
+                            method: 'post',
+                            data: formData,
+                            cache       : false,
+                            contentType : false,
+                            processData : false,
+                            url: base_url+'rpc/minitcurai/'+minit_id+'/edit',
+                            success: function() {
+                                resolve();
+                            },
+                            error: function(err) {
+                                reject(err);
+                            },
+                            statusCode: login()
+                        });
+                    })
+                }
+            }).then((result) => {
+                if (result.value) {
+                    swal({
+                        title: 'Berjaya!',
+                        text: 'Maklumat telah dikemaskini',
+                        type: 'success'
+                    }).then(() => {$('#modal-edit-minit-curai').modal('hide'); populateDg(url, '#dg-minit');});
+                }
+            }).catch(function (error) {
+                var errorMsg = error.statusText;
+
+                if (error.status == 409) {
+                    errorMsg = 'Rekod telah wujud!';
+                }
+
+                swal({
+                    title: 'Ralat!',
+                    text: errorMsg,
+                    type: 'error'
+                });
+            });
+        });
+
+        $('#modal-edit-minit-curai').on('hidden.bs.modal', function(e) {
+            e.preventDefault();
+            $(this).find('.modal-body').html('<h4><i class="fa fa-refresh fa-spin"></i> Loading...</h4>');
+        })
+
+        $('#modal-edit-minit-curai').on('click', "#btn-minit-hantar", function (e) {
+            e.preventDefault();
+
+            swal({
+                title: 'Amaran!',
+                text: 'Anda pasti untuk menghantar maklumat ini?',
+                type: 'warning',
+                cancelButtonText: 'Tidak',
+                showCancelButton: true,
+                confirmButtonText: 'Ya!',
+                showLoaderOnConfirm: true,
+                allowOutsideClick: false,
+                allowOutsideClick: () => !swal.isLoading(),
+                preConfirm: () => {
+                    return new Promise((resolve, reject) => {
+                        
+                        $.ajax({
+                            method: 'post',
+                            cache       : false,
+                            contentType : false,
+                            processData : false,
+                            url: base_url+'rpc/minitcurai/'+minit_id+'/send',
+                            success: function() {
+                                resolve();
+                            },
+                            error: function(err) {
+                                reject(err);
+                            },
+                            statusCode: login()
+                        });
+                    })
+                }
+            }).then((result) => {
+                if (result.value) {
+                    swal({
+                        title: 'Berjaya!',
+                        text: 'Maklumat telah dihantar',
+                        type: 'success'
+                    }).then(() => {$('#modal-edit-minit-curai').modal('hide'); populateDg(url, '#dg-minit');});
+                }
+            }).catch(function (error) {
+                var errorMsg = error.statusText;
+
+                if (error.status == 409) {
+                    errorMsg = 'Rekod telah wujud!';
+                }
+
+                swal({
+                    title: 'Ralat!',
+                    text: errorMsg,
+                    type: 'error'
+                });
+            });
         });
       });
     </script>
