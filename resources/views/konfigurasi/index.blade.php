@@ -114,7 +114,6 @@
                                 </table>
                             </div>
                         </div>
-
                         @can('view-cuti')
                             <div class="tab-pane" id="tab_2">
                                 <div id="cuti_content"></div>

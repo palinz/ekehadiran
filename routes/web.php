@@ -148,5 +148,13 @@ Route::middleware('auth')->group(function () {
         Route::get('/minitcurai/{minitCurai}/edit', 'MinitCuraiController@edit');
         Route::patch('/minitcurai/{minitCurai}/edit', 'MinitCuraiController@update');
         Route::post('/minitcurai/{minitCurai}/send', 'MinitCuraiController@send');
+
+        // bahagian
+        Route::get('/bahagian/create', 'BahagianController@create');
+        Route::post('/bahagian/store', 'BahagianController@store');
+        Route::get('/bahagian/{dept}/edit', 'BahagianController@edit');
+        Route::put('/bahagian/{dept}/store', 'BahagianController@update');
+        Route::patch('/bahagian/{dept}/store', 'BahagianController@update');
+        Route::delete('/bahagian/{dept}', 'BahagianController@destroy');
     });
 });

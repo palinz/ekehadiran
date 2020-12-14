@@ -106,7 +106,7 @@
 
 @section('scripts')
     <script>
-      $(function() {
+    $(function() {
         var minit_id = 0;
         var url = base_url+'rpc/minitcurai/grid';
         populateDg(url, '#dg-minit');
@@ -368,6 +368,6 @@
                 });
             });
         });
-      });
+    });
     </script>
 @endsection

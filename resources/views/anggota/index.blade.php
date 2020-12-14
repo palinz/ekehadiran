@@ -30,7 +30,13 @@
                                         <input id="sub-dept" type="checkbox" checked> Sub Jabatan
                                     </label>
                                 </div>
+                                <div>
+                                    <button id="cmd-create-bahagian">Baru</button>
+                                    <button id="cmd-edit-bahagian">Edit</button>
+                                    <button id="cmd-hapus-bahagian">Hapus</button>
+                                </div>
                             </div>
+                            
                             <div class="panel-body" style="overflow:auto;">
                                 <div id="departments"></div>
                             </div>
@@ -101,6 +107,48 @@
         <!-- End box -->
     </section>
     <!-- /.content -->
+
+    <!-- Modal --> 
+    <div class="modal fade" id="modal-bahagian">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Default Modal</h4>
+            </div>
+            <div class="modal-body">
+                <h4>
+                    <i class="fa fa-refresh fa-spin"></i> Loading...
+                </h4>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+        <!-- Modal --> 
+    <div class="modal fade" id="modal-edit-bahagian">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Default Modal</h4>
+            </div>
+            <div class="modal-body">
+                <h4>
+                    <i class="fa fa-refresh fa-spin"></i> Loading...
+                </h4>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 
     <!-- Modal --> 
     <div class="modal fade" id="modal-default">
@@ -2281,7 +2329,6 @@
             $('#detail-info-personal').show();
             $('#grid-wrapper').hide();
             cal.fullCalendar('render');
-
         });
 
         $('#detail-info-personal').on('click', '#back-wrapper', function(e) {
@@ -2289,6 +2336,260 @@
             $('#grid-wrapper').show();
             $('#detail-info-personal').hide();
             cal.fullCalendar('destroy');
+        });
+
+        //cmd-create-bahagian
+        $('#cmd-create-bahagian').on('click', function(e) {
+            e.preventDefault();
+            openModal('#modal-bahagian', 'CIPTA BAHAGIAN');
+        });
+
+        $('#modal-bahagian').on('show.bs.modal', function(e) {
+            var modalBody = $(this).find('.modal-body');
+            $.ajax({
+                url: base_url + 'rpc/bahagian/create',
+                success: function(data, textStatus, jqXHR) {
+                    modalBody.html(data);
+
+                    var tree = $('#departmentsTree6').jstree({
+                        core:{
+                            multiple : false,
+                            check_callback: true,
+                            data: departments
+                        }
+                    });
+
+                    $('#departmentsTree6').on('select_node.jstree', function (e, data) {
+                        var id = data.instance.get_node(data.selected[0]).id;
+                        var text = data.instance.get_node(data.selected[0]).text;
+
+                        $('#departmentDisplay6').val(text);
+                        $('#departmentDisplay6Id').val(id);
+                        $("#treeDisplay6").hide();
+                    });
+                },
+                statusCode: login()
+            });
+        });
+
+        $('#modal-bahagian').on('click', '#departmentDisplay6', function(e) {
+            e.preventDefault();
+            $('#departmentsTree6').css('width', $(this).parent().actual('width'));
+            $('#departmentsTree6').jstree('select_node', $('#departmentDisplay6Id').val().toString());
+            $('#treeDisplay6').toggle();
+
+            $(document).click(function (e) {
+                if (! $(e.target).hasClass("departmentDisplay") && $(e.target).parents("#treeDisplay6").length === 0) {
+                    $("#treeDisplay6").hide();
+                }
+            });
+        });
+
+        $('#modal-bahagian').on('submit', '#frm-bahagian', function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+
+            swal({
+                //title: 'Amaran!',
+                text: 'Anda pasti untuk mencipta maklumat ini?',
+                type: 'question',
+                cancelButtonText: 'Tidak',
+                showCancelButton: true,
+                confirmButtonText: 'Ya!',
+                showLoaderOnConfirm: true,
+                allowOutsideClick: () => !swal.isLoading(),
+                preConfirm: (email) => {
+                    return new Promise((resolve,reject) => {
+                         $.ajax({
+                            method: 'post',
+                            data: formData,
+                            cache       : false,
+                            contentType : false,
+                            processData : false,
+                            url: base_url+'rpc/bahagian/store',
+                            success: function(data, extStatus, jqXHR) {
+                                resolve({value: true});
+                            },
+                            error: function(jqXHR, textStatus, errorThrown) {
+                                reject(textStatus);
+                            },
+                            statusCode: login()
+                        });
+                    })
+                }
+            }).then((result) => {
+                if (result.value) {
+                    swal({
+                        title: 'Berjaya!',
+                        //text: 'Maklumat telah dikemaskini',
+                        type: 'success'
+                    }).then(() => {
+                        $('#modal-bahagian').modal('hide')
+                        location.reload();
+                    });
+                }
+            }).catch(function (error) {
+                swal({
+                    title: 'Ralat!',
+                    text: 'Pengemaskinian tidak berjaya!. Sila berhubung dengan Pentadbir sistem',
+                    type: 'error'
+                });
+            });
+        });
+
+        $('#modal-bahagian').on('click', '#btn-batal', function(e){
+            e.preventDefault();
+            $('#modal-bahagian').modal('hide');
+        });
+
+        $('#cmd-edit-bahagian').on('click', function(e) {
+            e.preventDefault();
+            openModal('#modal-edit-bahagian', 'KEMASKINI BAHAGIAN');
+        });
+
+        $('#modal-edit-bahagian').on('show.bs.modal', function(e) {
+            var modalBody = $(this).find('.modal-body');
+            $.ajax({
+                url: base_url + 'rpc/bahagian/'+ dataSearch.searchDept +'/edit',
+                success: function(data, textStatus, jqXHR) {
+                    modalBody.html(data);
+
+                    var tree = $('#departmentsTree6').jstree({
+                        core:{
+                            multiple : false,
+                            check_callback: true,
+                            data: departments
+                        }
+                    });
+
+                    $('#departmentsTree6').on('select_node.jstree', function (e, data) {
+                        var id = data.instance.get_node(data.selected[0]).id;
+                        var text = data.instance.get_node(data.selected[0]).text;
+
+                        $('#departmentDisplay6').val(text);
+                        $('#departmentDisplay6Id').val(id);
+                        $("#treeDisplay6").hide();
+                    });
+                },
+                statusCode: login()
+            });
+        });
+
+        $('#modal-edit-bahagian').on('click', '#departmentDisplay6', function(e) {
+            e.preventDefault();
+            $('#departmentsTree6').css('width', $(this).parent().actual('width'));
+            $('#departmentsTree6').jstree('select_node', $('#departmentDisplay6Id').val().toString());
+            $('#treeDisplay6').toggle();
+
+            $(document).click(function (e) {
+                if (! $(e.target).hasClass("departmentDisplay") && $(e.target).parents("#treeDisplay6").length === 0) {
+                    $("#treeDisplay6").hide();
+                }
+            });
+        });
+
+        $('#modal-edit-bahagian').on('submit', '#frm-edit-bahagian', function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+
+            swal({
+                //title: 'Amaran!',
+                text: 'Anda pasti untuk mengemaskini maklumat ini?',
+                type: 'question',
+                cancelButtonText: 'Tidak',
+                showCancelButton: true,
+                confirmButtonText: 'Ya!',
+                showLoaderOnConfirm: true,
+                allowOutsideClick: () => !swal.isLoading(),
+                preConfirm: (email) => {
+                    return new Promise((resolve,reject) => {
+                         $.ajax({
+                            method: 'post',
+                            data: formData,
+                            cache       : false,
+                            contentType : false,
+                            processData : false,
+                            url: base_url+'rpc/bahagian/'+ dataSearch.searchDept +'/store',
+                            success: function(data, extStatus, jqXHR) {
+                                resolve({value: true});
+                            },
+                            error: function(jqXHR, textStatus, errorThrown) {
+                                reject(textStatus);
+                            },
+                            statusCode: login()
+                        });
+                    })
+                }
+            }).then((result) => {
+                if (result.value) {
+                    swal({
+                        title: 'Berjaya!',
+                        //text: 'Maklumat telah dikemaskini',
+                        type: 'success'
+                    }).then(() => {
+                        $('#modal-bahagian').modal('hide')
+                        location.reload();
+                    });
+                }
+            }).catch(function (error) {
+                swal({
+                    title: 'Ralat!',
+                    text: 'Pengemaskinian tidak berjaya!. Sila berhubung dengan Pentadbir sistem',
+                    type: 'error'
+                });
+            });
+        });
+
+        $('#modal-edit-bahagian').on('click', '#btn-batal', function(e){
+            e.preventDefault();
+            $('#modal-edit-bahagian').modal('hide');
+        });
+
+        $('#cmd-hapus-bahagian').on('click', function(e) {
+            e.preventDefault();
+            swal({
+                //title: 'Amaran!',
+                text: 'Anda pasti untuk menghapuskan maklumat ini?',
+                type: 'question',
+                cancelButtonText: 'Tidak',
+                showCancelButton: true,
+                confirmButtonText: 'Ya!',
+                showLoaderOnConfirm: true,
+                allowOutsideClick: () => !swal.isLoading(),
+                preConfirm: (email) => {
+                    return new Promise((resolve,reject) => {
+                         $.ajax({
+                            method: 'post',
+                            data: {'_method': 'DELETE'},
+                            url: base_url+'rpc/bahagian/'+ dataSearch.searchDept,
+                            success: function(data, extStatus, jqXHR) {
+                                resolve({value: true});
+                            },
+                            error: function(jqXHR, textStatus, errorThrown) {
+                                reject(textStatus);
+                            },
+                            statusCode: login()
+                        });
+                    })
+                }
+            }).then((result) => {
+                if (result.value) {
+                    swal({
+                        title: 'Berjaya!',
+                        //text: 'Maklumat telah dikemaskini',
+                        type: 'success'
+                    }).then(() => {
+                        $('#modal-bahagian').modal('hide')
+                        location.reload();
+                    });
+                }
+            }).catch(function (error) {
+                swal({
+                    title: 'Ralat!',
+                    text: 'Pengemaskinian tidak berjaya!. Sila berhubung dengan Pentadbir sistem',
+                    type: 'error'
+                });
+            });
         });
 
         function openModal(modal, header)
@@ -2301,6 +2602,7 @@
 
             modal.modal({backdrop: 'static', keyboard: false});
         }
+
     });
 </script>
 

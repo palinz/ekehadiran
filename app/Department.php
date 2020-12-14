@@ -15,6 +15,22 @@ class Department extends BaseModel implements Flowable
         $this->primaryKey = 'deptid';
     }
 
+    public static function inserting($fields)
+    {
+        $department = new Department;
+
+        $department->deptname = $fields['deptname'];
+        $department->supdeptid = $fields['supdeptid'];
+        $department->save();
+    }
+
+    public function processUpdating($fields)
+    {
+        $this->deptname = $fields['deptname'];
+        $this->supdeptid = $fields['supdeptid'];
+        $this->save();
+    }
+
     public function anggota()
     {
         return $this->hasMany(Anggota::class, 'defaultdeptid');
@@ -28,6 +44,16 @@ class Department extends BaseModel implements Flowable
     public function flow()
     {
         return $this->hasOne(FlowBahagian::class, 'dept_id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany(self::class, 'supdeptid', 'deptid');
+    }
+
+    public function parent()
+    {
+        return $this->hasOne(self::class, 'deptid', 'supdeptid');
     }
 
     public static function senaraiDepartment()
