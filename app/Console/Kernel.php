@@ -25,7 +25,10 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('emasa:janafinalatt')
-            ->dailyAt('05:00');
+            ->dailyAt('04:00');
+        $schedule->command('emasa:fetch-from-devices')
+            ->everyThirtyMinutes()
+            ->withoutOverlapping();
     }
 
     /**
