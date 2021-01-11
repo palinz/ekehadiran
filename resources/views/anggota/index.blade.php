@@ -481,6 +481,9 @@
         var penilai = {};
         var userRow = {};
 
+        var usrAsal = '';
+        var usernameInput = {};
+
         populateDept('#panel-department', '#departments', url, '#dg-anggota', '.content-wrapper');
         populateDg(url, '#dg-anggota');
 
@@ -1684,6 +1687,86 @@
 
         $("#modal-man-login").on("keyup", "#txtKatalaluanBaruPersonal", function(e) {
             check_pass_personal();
+        });
+
+        $("#modal-man-login").on("click", "#cmd-edit-username", function(event) {
+            $(this).toggle();
+            $("#cmd-save-username").toggle();
+            $("#cmd-cancel-username").toggle();
+
+            usrAsal = $("#fld-edit-username").text();
+            usernameInput = $("<input type=\"text\" class=\"form-control departmentDisplay\">");
+            usernameInput.val(usrAsal);
+            $("#fld-edit-username").html(usernameInput);
+        });
+
+        $("#modal-man-login").on("click", '#cmd-save-username', function(event) {
+            swal({
+                title: 'Amaran!',
+                text: 'Anda pasti untuk mengemaskini maklumat ini?',
+                type: 'warning',
+                cancelButtonText: 'Tidak',
+                showCancelButton: true,
+                confirmButtonText: 'Ya!',
+                showLoaderOnConfirm: true,
+                allowOutsideClick: false,
+                allowOutsideClick: () => !swal.isLoading(),
+                preConfirm: () => {
+                    return new Promise((resolve, reject) => {
+                        
+                        $.ajax({
+                            method: 'post',
+                            data: {
+                                _method: 'PATCH',
+                                username: usernameInput.val(),
+                            },
+                            url: base_url+"rpc/pengguna/"+mProfil.userId+"/login",
+                            success: function() {
+                                resolve();
+                            },
+                            error: function(err) {
+                                reject(err);
+                            },
+                            statusCode: login()
+                        });
+                    })
+                }
+            }).then((result) => {
+                if (result.value) {
+                    swal({
+                        title: 'Berjaya!',
+                        text: 'Katalaluan telah dikemaskini.',
+                        type: 'success'
+                    });
+
+                    $(this).toggle();
+                    $("#cmd-edit-username").toggle();
+                    $("#cmd-cancel-username").toggle();
+
+                    $("#fld-edit-username").text(usernameInput.val());
+                }
+            }).catch(function (error) {
+                swal({
+                    title: 'Ralat!',
+                    text: errorMsg,
+                    type: 'error'
+                });
+
+                $(this).toggle();
+                $("#cmd-edit-username").toggle();
+                $("#cmd-cancel-username").toggle();
+
+                $("#fld-edit-username").text(usrAsal);
+
+            });
+        });
+
+        $("#modal-man-login").on("click", '#cmd-cancel-username', function(event) {
+            $(this).toggle();
+            $("#cmd-save-username").toggle();
+            $("#cmd-edit-username").toggle();
+
+            $("#fld-edit-username").text(usrAsal);
         });
 
         function check_pass_personal() {

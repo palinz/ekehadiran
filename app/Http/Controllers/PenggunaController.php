@@ -48,6 +48,14 @@ class PenggunaController extends BaseController
         return $this->rpcLoginIndex($profil);
     }
 
+    public function rpcLoginUpdate(Anggota $profil, Request $request)
+    {
+        $profil->user->username = $request->input('username');
+        $profil->user->save();
+
+        return $this->rpcLoginIndex($profil);
+    }
+
     public function rpcTukarKatalaluan(TukarKatalaluanRequest $request)
     {
         $user = Auth::user();

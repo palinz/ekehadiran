@@ -3,11 +3,17 @@
         <tbody>
             <tr>
                 <td class="col-md-3"><b>ID Pengguna</b></td>
-                <td>{{ $profil->user->username }}</td>
+                <td id="fld-edit-username">{{ $profil->user->username }}</td>
+                <td width="1">
+                    <button id="cmd-edit-username" type="button" class="btn btn-default btn-circle btn-xs" title="Kemaskini"><i class="fa fa-fw fa-pencil-square-o"></i></button>
+                    <button id="cmd-save-username" type="button" class="btn btn-default btn-circle btn-xs" title="Simpan" style="display: none;"><i class="fa fa-fw fa-check"></i></button>
+                    <button id="cmd-cancel-username" type="button" class="btn btn-default btn-circle btn-xs" title="Batal" style="display: none;"><i class= "fa fa-fw fa-times"></i></button>
+                </td>
             </tr>
             <tr>
                 <td class="col-md-3"><b>Domain</b></td>
                 <td>{{ $profil->user->domain }} </td>
+                <td width="1"></td>
             </tr>
         </tbody>
     </table>

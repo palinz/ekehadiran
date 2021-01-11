@@ -107,6 +107,7 @@ Route::middleware('auth')->group(function () {
         Route::prefix('pengguna')->group(function () {
             Route::get('/{profil}/login', 'PenggunaController@rpcLoginIndex')->middleware('can:view-login');
             Route::post('/{profil}/login', 'PenggunaController@rpcLoginStore')->middleware('can:add-login');
+            Route::match(['put', 'patch'], '/{profil}/login', 'PenggunaController@rpcLoginUpdate');
             Route::post('/ldap', 'PenggunaController@rpcSearchLdap')->middleware('can:view-login');
 
             Route::post('/{profil}/peranan', 'PenggunaController@rpcPerananStore')->middleware('can:add-peranan');
@@ -153,8 +154,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/bahagian/create', 'BahagianController@create');
         Route::post('/bahagian/store', 'BahagianController@store');
         Route::get('/bahagian/{dept}/edit', 'BahagianController@edit');
-        Route::put('/bahagian/{dept}/store', 'BahagianController@update');
-        Route::patch('/bahagian/{dept}/store', 'BahagianController@update');
+        Route::match(['put', 'patch'], '/bahagian/{dept}/store', 'BahagianController@update');
         Route::delete('/bahagian/{dept}', 'BahagianController@destroy');
     });
 });
