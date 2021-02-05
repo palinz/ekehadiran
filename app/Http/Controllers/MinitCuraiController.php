@@ -72,6 +72,11 @@ class MinitCuraiController extends BaseController
         $minitCurai->save();
     }
 
+    public function sah(MinitCurai $minitCurai, Request $request)
+    {
+        $minitCurai->validating();
+    }
+
     public function send(MinitCurai $minitCurai)
     {
         $minitCurai->flag = MinitCurai::HANTAR;

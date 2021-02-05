@@ -28,13 +28,26 @@ class MinitCurai extends Model
         return $this->hasMany(MinitCuraiFlow::class, "minitcurai_id");
     }
 
+    public function isOwner(User $user)
+    {
+        return $this->anggota_id == $user->anggota_id;
+    }
+
+    public function sender()
+    {
+        return $this->minitcurai_flow->last()->senderAnggota->xtraAttr;
+    }
+
     public static function menyimpan(Collection $fields)
     {
         $mc = self::create($fields->except(['from_anggota_id', 'to_anggota_id'])->toArray());
         $mc->minitCurai_flow()->save(new MinitCuraiFlow($fields->only(['from_anggota_id', 'to_anggota_id'])->toArray()));
     }
 
-    public static function involvement()
+    public function validating()
     {
+        $this->flag = "DISAHKAN";
+        $this->save();
     }
+
 }

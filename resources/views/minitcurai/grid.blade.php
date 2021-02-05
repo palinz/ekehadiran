@@ -2,8 +2,9 @@
     <thead>
         <tr style="background-image: linear-gradient(to bottom, #fafafa 0, #f4f4f4 100%);">
             <th style="width:1px;">#</th>
-            <th>TAJUK</th>
+            <th>AKTIVITI</th>
             <th>ANJURAN</th>
+            <th>PENGHANTAR</th>
             <th style="width:1px;">STATUS</th>
             <th style="width:1px;">OPERASI</th>
         </tr>
@@ -14,8 +15,13 @@
                 <td>{{ ($union->currentpage()-1) * $union->perpage() + $loop->index + 1 }}</td>
                 <td>{{ $minit->tajuk }}</td>
                 <td>{{ $minit->anjuran }}</td>
+                <td>{{ ($minit->isOwner(Auth::user())) ? "--" : $minit->sender()->nama }}</td>
                 <td>{{ $minit->flag }}</td>
-                <td><button class="btn btn-default btn-flat btn-sm btn-kemaskini" data-id="{{ $minit->id }}"><i class="fa fa-edit"></i> Kemaskini</button></td>
+                <td>
+                    @if($minit->flag != "DISAHKAN")
+                    <button class="btn btn-default btn-flat btn-sm btn-kemaskini" data-id="{{ $minit->id }}"><i class="fa fa-edit"></i> Kemaskini</button>
+                    @endif
+                </td>
             </tr>
         @empty
             <tr>

@@ -35,8 +35,8 @@
             <button id="btn-minit-hantar" class="btn btn-success">HANTAR</button>
         @endif
         @if(Auth::user()->anggota->pegawaiYangDinilai->count() > 0 && Auth::user()->anggota_id != $minitCurai->anggota_id)
-            <button id="btn-minit-pulang" class="btn btn-success">PULANG</button>
-            <button id="btn-minit-sah" class="btn btn-success">SAH</button>
+            <button id="btn-minit-pulang" class="btn btn-success" data-status="PULANG">PULANG</button>
+            <button id="btn-minit-sah" class="btn btn-success" data-status="SAH">SAH</button>
         @endif
         <button id="btn-tutup" type="button" class="btn btn-link" style="color:#dd4b39;" data-dismiss="modal" aria-label="Close">BATAL</button>
     </form>
