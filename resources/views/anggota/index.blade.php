@@ -52,15 +52,21 @@
                                             <input id="search-key" type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
                                         </div>
                                     </td>
+                                    @can('view-profil')
                                     <td style="margin:0;padding:0;">
                                         &nbsp;<button id="top-btn-profil" class="btn btn-default btn-flat btn-sm" disabled><i class="fa fa-user"></i> Profil</button>
                                     </td>
+                                    @endcan
+                                    @can('view-waktu_bekerja')
                                     <td style="margin:0;padding:0;">
                                         &nbsp;<button id="top-btn-wp" class="btn btn-default btn-flat btn-sm" disabled><i class="fa fa-clock-o"></i> Waktu Bekerja</button>
                                     </td>
+                                    @endcan
+                                    @can('view-penilai')
                                     <td style="margin:0;padding:0;">
                                         &nbsp;<button id="top-btn-ppp" class="btn btn-default btn-flat btn-sm" disabled><i class="fa fa-users"></i> Pegawai Penilai</button>
                                     </td>
+                                    @endcan
                                     <td style="margin:0;padding:0;">
                                         <ul class="nav nav-pills">
                                             <li role="presentation" class="dropdown ">
@@ -71,8 +77,12 @@
                                                     @can('view-base-bahagian')
                                                     <li><a id="btn-base-bahagian" href="#"><i class="fa  fa-map-marker"></i> Base Bahagian</a></li>    
                                                     @endcan
+                                                    @can('view-flow-profil')
                                                     <li><a id="btn-flow-profil" href="#"><i class="fa fa-random"></i> Flow</a></li>
+                                                    @endcan
+                                                    @can('view-login')
                                                     <li><a id="btn-man-login" href="#"><i class="fa fa-key"></i> Login</a></li>
+                                                    @endcan
                                                     <!-- <li><a id="btn-arkib" href="#"><i class="fa fa-archive"></i> Arkib</a></li> -->
                                                 </ul>
                                             </li>

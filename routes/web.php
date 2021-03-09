@@ -16,10 +16,10 @@ Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', 'KalendarController@index');
+    Route::get('/', 'MinitCuraiController@index');
 
     //Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/dashboard', 'KalendarController@index')->name('dashboard');
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     Route::get('/kalendar', 'KalendarController@index')->name('kalendar');
     Route::get('/minitcurai', 'MinitCuraiController@index')->name('minit_curai');
 

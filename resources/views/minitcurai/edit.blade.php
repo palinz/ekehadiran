@@ -30,11 +30,14 @@
                 </tr>
             </body>
         </table>
+        
+        @if($minitCurai->flag != $minitCurai::SAH)
         <button class="btn btn-success btn-kemaskini-simpan" type="submit">SIMPAN</button>
+        @endif
         @if($minitCurai->flag == $MinitCurai::DERAF || $minitCurai->flag == $MinitCurai::PULANG)
             <button id="btn-minit-hantar" class="btn btn-success">HANTAR</button>
         @endif
-        @if(Auth::user()->anggota->pegawaiYangDinilai->count() > 0 && Auth::user()->anggota_id != $minitCurai->anggota_id)
+        @if(Auth::user()->anggota->pegawaiYangDinilai->count() > 0 && Auth::user()->anggota_id != $minitCurai->anggota_id && $minitCurai->flag != $minitCurai::SAH)
             <button id="btn-minit-pulang" class="btn btn-success" data-status="PULANG">PULANG</button>
             <button id="btn-minit-sah" class="btn btn-success" data-status="SAH">SAH</button>
         @endif

@@ -2,7 +2,6 @@
 
 namespace App;
 
-use App\MinitCurai;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,7 +10,7 @@ class MinitCurai extends Model
     const DERAF = 'DERAF';
     const HANTAR = 'HANTAR';
     const PULANG = 'PULANG';
-    const SAH = 'SAH';
+    const SAH = 'DISAHKAN';
 
     protected $table = 'minitcurai';
 
@@ -46,7 +45,7 @@ class MinitCurai extends Model
 
     public function validating()
     {
-        $this->flag = "DISAHKAN";
+        $this->flag = self::SAH;
         $this->save();
     }
 

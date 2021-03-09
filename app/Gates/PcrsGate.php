@@ -13,32 +13,32 @@ class PcrsGate
         Gate::define('view-anggota', $this->minPrivilege(Role::KETUA_KERANI));
 
         // Profil
-        Gate::define('view-profil', $this->minPrivilege(Role::KETUA_KERANI));
-        Gate::define('edit-profil', $this->minPrivilege(Role::KETUA_KERANI));
+        Gate::define('view-profil', $this->minPrivilege(Role::ADMIN));
+        Gate::define('edit-profil', $this->minPrivilege(Role::ADMIN));
 
         // Waktu Bekerja
-        Gate::define('view-waktu_bekerja', $this->minPrivilege(Role::KETUA_KERANI));
-        Gate::define('add-waktu_bekerja', $this->minPrivilege(Role::KETUA_KERANI));
-        Gate::define('delete-waktu_bekerja', $this->minPrivilege(Role::KETUA_KERANI));
+        Gate::define('view-waktu_bekerja', $this->minPrivilege(Role::ADMIN));
+        Gate::define('add-waktu_bekerja', $this->minPrivilege(Role::ADMIN));
+        Gate::define('delete-waktu_bekerja', $this->minPrivilege(Role::ADMIN));
 
         // Penilai
-        Gate::define('view-penilai', $this->minPrivilege(Role::KETUA_KERANI));
-        Gate::define('edit-penilai', $this->minPrivilege(Role::KETUA_KERANI));
+        Gate::define('view-penilai', $this->minPrivilege(Role::ADMIN));
+        Gate::define('edit-penilai', $this->minPrivilege(Role::ADMIN));
 
         // Pengguna
-        Gate::define('view-login', $this->minPrivilege(Role::KETUA_KERANI));
-        Gate::define('add-login', $this->minPrivilege(Role::KETUA_KERANI));
-        Gate::define('view-peranan', $this->minPrivilege(Role::KETUA_KERANI));
-        Gate::define('add-peranan', $this->minPrivilege(Role::KETUA_KERANI));
-        Gate::define('delete-peranan', $this->minPrivilege(Role::KETUA_KERANI));
+        Gate::define('view-login', $this->minPrivilege(Role::ADMIN));
+        Gate::define('add-login', $this->minPrivilege(Role::ADMIN));
+        Gate::define('view-peranan', $this->minPrivilege(Role::ADMIN));
+        Gate::define('add-peranan', $this->minPrivilege(Role::ADMIN));
+        Gate::define('delete-peranan', $this->minPrivilege(Role::ADMIN));
 
         // Base Bahagian
         Gate::define('view-base-bahagian', $this->minPrivilege(Role::ADMIN));
         Gate::define('edit-base-bahagian', $this->minPrivilege(Role::ADMIN));
 
         //profil flow
-        Gate::define('view-flow-profil', $this->minPrivilege(Role::KETUA_KERANI));
-        Gate::define('edit-flow-profil', $this->minPrivilege(Role::KETUA_KERANI));
+        Gate::define('view-flow-profil', $this->minPrivilege(Role::ADMIN));
+        Gate::define('edit-flow-profil', $this->minPrivilege(Role::ADMIN));
 
         //Laporan
         Gate::define('view-laporan', $this->minPrivilege(Role::KETUA_KERANI));

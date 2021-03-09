@@ -47,21 +47,21 @@
                         <!-- /.row -->
                     </li>
                     <!-- Menu Footer-->
-                    <li class="user-footer">
+                    <li class="user-footer" >
                     @if (Auth::user()->ableChangePassword())
                         <div class="pull-left">
-                            <a id="btn-tukar-password" href="#" class="btn btn-default btn-default btn-flat">Tukar Katalaluan</a>
+                            <a id="btn-tukar-password" href="#" class="btn btn-warning btn-flat">Tukar Katalaluan</a>
                         </div>
                     @endif
-                    <div class="pull-right">
-                        <a href="{{ route('logout') }}" class="btn btn-default btn-flat"
-                            onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">Sign out</a>
+                        <div class="pull-right">
+                            <a href="{{ route('logout') }}" class="btn btn-flat btn-danger"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">Sign out</a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </div>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
                     </li>
                 </ul>
                 </li>

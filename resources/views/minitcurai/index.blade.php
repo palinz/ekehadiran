@@ -239,6 +239,13 @@
             $('#modal-edit-minit-curai').modal('show');
         });
 
+        
+        $('#dg-minit').on('click', ".btn-informasi", function(e) {
+            e.preventDefault();
+            minit_id = $(this).data('id');
+            $('#modal-edit-minit-curai').modal('show');
+        });
+
         $('#modal-edit-minit-curai').on('show.bs.modal', function (e) {
             $(this).find('.modal-header').css('backgroundColor','steelblue');
             $(this).find('.modal-header').css('color','white');
