@@ -15,7 +15,7 @@ class MinitCurai extends Model
     protected $table = 'minitcurai';
 
     protected $fillable = [
-        'tajuk', 'anjuran', 'tarikh', 'lokasi', 'isu', 'anggota_id',
+        'tajuk', 'anjuran', 'tarikh', 'lokasi', 'isu', 'anggota_id', 'tindakan',
     ];
 
     protected $dates = [
