@@ -34,6 +34,11 @@ class Acara extends Eventable
         $this->setDateFormat(config('pcrs.modelDateFormat'));
     }
 
+    public function xtra_userinfo()
+    {
+        return $this->belongsTo(XtraAnggota::class, "anggota_id", "anggota_id");
+    }
+
     public function scopeEvents($query)
     {
         return $query->select(DB::raw('perkara as \'title\''), DB::raw('masa_mula as \'start\''), DB::raw('masa_tamat as \'end\''), DB::raw('\'false\' as \'allDay\''), DB::raw('\'#00c0ef\' as \'color\''), DB::raw('\'black\' as \'textColor\''), DB::raw('id'), DB::raw('jenis_acara'), DB::raw('keterangan'), DB::raw('\'' . Eventable::ACARA . '\' as \'table_name\''));

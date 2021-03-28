@@ -30,6 +30,7 @@ class MinitCuraiController extends BaseController
             "tarikh" => Carbon::createFromFormat('Y-m-d',  $request->txtTarikh)->format('Y-m-d'),
             "lokasi" => $request->txtTempat,
             "isu" => $request->txtIsu,
+            "tindakan" => $request->txtTindakan,
             "anggota_id" => Auth::user()->anggota_id,
             "from_anggota_id" => Auth::user()->anggota_id,
             "to_anggota_id" => Auth::user()->anggota_id,
