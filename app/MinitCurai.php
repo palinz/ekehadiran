@@ -15,7 +15,15 @@ class MinitCurai extends Model
     protected $table = 'minitcurai';
 
     protected $fillable = [
-        'tajuk', 'anjuran', 'tarikh', 'lokasi', 'isu', 'anggota_id', 'tindakan',
+        'tajuk',
+        'anjuran',
+        'tarikh',
+        'lokasi',
+        'isu',
+        'anggota_id',
+        'tindakan',
+        'pegawai_terlibat',
+        'cadangan'
     ];
 
     protected $dates = [
@@ -48,5 +56,4 @@ class MinitCurai extends Model
         $this->flag = self::SAH;
         $this->save();
     }
-
 }
