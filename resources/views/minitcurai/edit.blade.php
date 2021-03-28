@@ -15,7 +15,7 @@
                 </tr>
                 <tr>
                     <td><b>Tarikh dan Masa</b></td>
-                    <td><input id="txtTarikhCurai" class="form-control" type="date" name="txtTarikh" placeholder="Tarikh" value="{{ $minitCurai->tarikh }}" required></td>
+                    <td><input id="txtTarikhCurai" class="form-control" type="date" name="txtTarikh" placeholder="Tarikh" value="{{ $minitCurai->tarikh->format('Y-m-d') }}" required></td>
                 </tr>
                 <tr>
                     <td><b>Tempat</b></td>
@@ -25,7 +25,7 @@
                     <td><b>Pegawai yang terlibat</b></td>
                     <td>
                         <div class="col-12">
-                            <textarea class="form-control" name="txtPegawai" rows="5" placeholder="Nyatakan Nama Pegawai Yang Terlibat" value="{{ $minitCurai->pegawai_terlibat }}" required></textarea>
+                            <textarea class="form-control" name="txtPegawai" rows="5" placeholder="Nyatakan Nama Pegawai Yang Terlibat" required>{{ $minitCurai->pegawai_terlibat }}</textarea>
                         </div>
                     </td>
                 </tr>
@@ -33,7 +33,7 @@
                     <td><b>Isu</b></td>
                     <td>
                         <div class="col-12">
-                            <textarea class="form-control" name="txtIsu" rows="5" placeholder="Nyatakan isi / isi penting " value="{{ $minitCurai->isu }}" required></textarea>
+                            <textarea class="form-control" name="txtIsu" rows="5" placeholder="Nyatakan isi / isi penting " required>{{ $minitCurai->isu }}</textarea>
                         </div>
                     </td>
                 </tr>
@@ -42,7 +42,7 @@
                     <td><b>Tindakan</b></td>
                     <td>
                         <div class="col-12">
-                            <textarea class="form-control" name="txtTindakan" rows="5" placeholder="Nyatakan tindakan seperti keputusan, Mesyuarat dalaman/bengkel dalaman dan lain-lain" value="{{ $minitCurai->tindakan }}" required></textarea>
+                            <textarea class="form-control" name="txtTindakan" rows="5" placeholder="Nyatakan tindakan seperti keputusan, Mesyuarat dalaman/bengkel dalaman dan lain-lain" required>{{ $minitCurai->tindakan }}</textarea>
                         </div>
                     </td>
                 </tr>
@@ -51,7 +51,7 @@
                     <td><b>Arahan / Cadangan</b></td>
                     <td>
                         <div class="col-12">
-                            <textarea class="form-control" name="txtCadangan" rows="5" placeholder="Arahan / Cadangan bagi Tindakan / Keputusan oleh Pengarah/Timbalan Pengarah (Sekiranya dari Timbalan Pengarah, salinan hendaklah diserahkan kepada Pengarah" value="{{ $minitCurai->cadangan }}" required></textarea>
+                            <textarea class="form-control" name="txtCadangan" rows="5" placeholder="Arahan / Cadangan bagi Tindakan / Keputusan oleh Pengarah/Timbalan Pengarah (Sekiranya dari Timbalan Pengarah, salinan hendaklah diserahkan kepada Pengarah" required>{{ $minitCurai->cadangan }}</textarea>
                         </div>
                     </td>
                 </tr>
