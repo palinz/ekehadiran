@@ -23,6 +23,7 @@ class MinitCurai extends Model
         'anggota_id',
         'tindakan',
         'pegawai_terlibat',
+        'cadangan'
     ];
 
     protected $dates = [

@@ -157,5 +157,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/bahagian/{dept}/edit', 'BahagianController@edit');
         Route::match(['put', 'patch'], '/bahagian/{dept}/store', 'BahagianController@update');
         Route::delete('/bahagian/{dept}', 'BahagianController@destroy');
+
+         // Acara
+        Route::get('/acara', 'AcaraController@index');
     });
 });
+
+    // Acara
+    Route::get('/acara', 'AcaraController@index');
+

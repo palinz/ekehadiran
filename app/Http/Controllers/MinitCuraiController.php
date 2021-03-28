@@ -65,11 +65,26 @@ class MinitCuraiController extends BaseController
 
     public function update(MinitCurai $minitCurai, Request $request)
     {
+        $fields = collect([
+            "tajuk" => $request->txtAktiviti,
+            "anjuran" => $request->txtAnjuran,
+            "tarikh" => Carbon::createFromFormat('Y-m-d',  $request->txtTarikh)->format('Y-m-d'),
+            "lokasi" => $request->txtTempat,
+            "isu" => $request->txtIsu,
+            "tindakan" => $request->txtTindakan,
+            "anggota_id" => Auth::user()->anggota_id,
+            "from_anggota_id" => Auth::user()->anggota_id,
+            "to_anggota_id" => Auth::user()->anggota_id,
+        ]);
+
         $minitCurai->tajuk = $request->txtAktiviti;
         $minitCurai->anjuran = $request->txtAnjuran;
         $minitCurai->tarikh = Carbon::createFromFormat('Y-m-d',  $request->txtTarikh)->format('Y-m-d');
         $minitCurai->lokasi = $request->txtTempat;
         $minitCurai->isu = $request->txtIsu;
+        $minitCurai->pegawai_terlibat = $request->txtPegawai;
+        $minitCurai->tindakan = $request->txtTindakan;
+        $minitCurai->cadangan = $request->txtCadangan;
 
         $minitCurai->save();
     }
