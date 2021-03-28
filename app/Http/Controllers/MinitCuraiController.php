@@ -30,6 +30,8 @@ class MinitCuraiController extends BaseController
             "tarikh" => Carbon::createFromFormat('Y-m-d',  $request->txtTarikh)->format('Y-m-d'),
             "lokasi" => $request->txtTempat,
             "isu" => $request->txtIsu,
+            'tindakan' => $request->txtTindakan,
+            'pegawai_terlibat' => $request->txtPegawai,
             "anggota_id" => Auth::user()->anggota_id,
             "from_anggota_id" => Auth::user()->anggota_id,
             "to_anggota_id" => Auth::user()->anggota_id,
@@ -51,7 +53,7 @@ class MinitCuraiController extends BaseController
             ->where("minitcurai_flow.to_anggota_id", Auth::user()->anggota_id);
         $involve->union($created);
 
-        $union = $involve->paginate($perPage);
+        $union = $involve->orderBy('tarikh', 'desc')->paginate($perPage);
 
         return view('minitcurai.grid', compact('union'));
     }
