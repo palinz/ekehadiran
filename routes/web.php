@@ -150,6 +150,7 @@ Route::middleware('auth')->group(function () {
         Route::patch('/minitcurai/{minitCurai}/edit', 'MinitCuraiController@update');
         Route::post('/minitcurai/{minitCurai}/send', 'MinitCuraiController@send');
         Route::post('/minitcurai/{minitCurai}/sah', 'MinitCuraiController@sah');
+        Route::post('/minitcurai/{minitCurai}/forward', 'MinitCuraiController@forward');
 
         // bahagian
         Route::get('/bahagian/create', 'BahagianController@create');

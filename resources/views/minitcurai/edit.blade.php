@@ -55,10 +55,20 @@
                         </div>
                     </td>
                 </tr>
-                </td>
-                </tr>
 
-                </body>
+                <tr>
+                    <td><button class="btn btn-default btn-majukan" type="button">MAJUKAN KEPADA >></button></td>
+                    <td>
+                        <div class="col-12">
+                            <select class="form-control comPegawai" name="states[]" multiple="multiple">
+                                @foreach($anggota as $ag)
+                                <option value={{ $ag->anggota_id }}>{{ $ag->nama }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+            </body>
         </table>
         <button class="btn btn-success btn-kemaskini-simpan" type="submit">SIMPAN</button>
         @if($minitCurai->flag == $MinitCurai::DERAF || $minitCurai->flag == $MinitCurai::PULANG)
@@ -70,10 +80,5 @@
         @endif
         <button id="btn-tutup" type="button" class="btn btn-link" style="color:#dd4b39;" data-dismiss="modal" aria-label="Close">BATAL</button>
         <td><a href="http://localhost/Laravel/test%20pdf.php"><button>CETAK</button></a></td> <!-- button for salinan-->
-        <td><a href=" http://localhost/Laravel/salinan.ek.php.php#item-2"><button>HANTAR</button></a></td> <!-- button for salinan-->
-
-
-
-
     </form>
 </div>

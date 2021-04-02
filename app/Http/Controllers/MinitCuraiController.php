@@ -9,6 +9,7 @@ use App\MinitCurai;
 use App\MinitCuraiFlow;
 use Illuminate\Http\Request;
 use App\Base\BaseController;
+use App\XtraAnggota;
 
 class MinitCuraiController extends BaseController
 {
@@ -60,7 +61,8 @@ class MinitCuraiController extends BaseController
 
     public function edit(MinitCurai $minitCurai)
     {
-        return view('minitcurai.edit', compact('minitCurai'));
+        $anggota = XtraAnggota::get();
+        return view('minitcurai.edit', compact('minitCurai', 'anggota'));
     }
 
     public function update(MinitCurai $minitCurai, Request $request)
@@ -103,5 +105,17 @@ class MinitCuraiController extends BaseController
             'from_anggota_id' => Auth::user()->anggota_id,
             'to_anggota_id' => Flow::pelulus(Auth::user()->anggota)->xtraAttr->anggota_id
         ]));
+    }
+
+    public function forward(MinitCurai $minitCurai, Request $request)
+    {
+        foreach($request->comPegawai as $pegawaiId) {
+            $fields = collect([
+                "from_anggota_id" => Auth::user()->anggota_id,
+                "to_anggota_id" => $pegawaiId,
+                "is_forward" => 1
+            ]);
+            MinitCurai::majukan($minitCurai, $fields);
+        }
     }
 }

@@ -56,4 +56,9 @@ class MinitCurai extends Model
         $this->flag = self::SAH;
         $this->save();
     }
+
+    public static function majukan($mc, $fields)
+    {
+        $mc->minitCurai_flow()->save(new MinitCuraiFlow($fields->toArray()));
+    }
 }

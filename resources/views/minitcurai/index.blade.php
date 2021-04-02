@@ -262,6 +262,28 @@
             })
         });
 
+        $('#modal-edit-minit-curai').on('shown.bs.modal', function(e) {
+            var modal = this;
+            $(this).find('.btn-majukan').on('click', function(e){
+                //console.log($(modal).find('.comPegawai').val());
+                $.ajax({
+                    method: 'POST',
+                    data: {
+                        comPegawai: $(modal).find('.comPegawai').val(),
+                    },
+                    url: base_url + 'rpc/minitcurai/' + minit_id + '/forward',
+                    success: function(data) {
+                        swal({
+                            title: 'Berjaya!',
+                            text: 'Minit telah dimajukan',
+                            type: 'success'
+                        })
+                    }
+                });
+            });
+
+        });
+
         $('#modal-edit-minit-curai').on('submit', "#frm-edit-minit-curai", function(e) {
             e.preventDefault();
             var formData = new FormData(this);
