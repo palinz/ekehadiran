@@ -118,4 +118,16 @@ class MinitCuraiController extends BaseController
             MinitCurai::majukan($minitCurai, $fields);
         }
     }
+    
+    public function pdf_cetak_inbox($minitcurai)
+    {
+        $minitcurai = \DB::table("minitcurai")
+                            
+
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadView("edit.pdf_cetak_inbox", [ 'tajuk' => $tajuk, 'anjuran' => $anjuran, 
+        'tarikh' => $tarikh, 'pegawai_terlibat' => $pegawai_terlibat, 'isu' => $isu, 'tindakan' => $tindakan, 'cadangan' => $cadangan]);
+                          //return $pdf->download('info_learning.pdf');
+        return $pdf->stream();
+    }
 }
