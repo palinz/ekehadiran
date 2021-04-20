@@ -78,7 +78,8 @@
         <button id="btn-minit-pulang" class="btn btn-success" data-status="PULANG">PULANG</button>
         <button id="btn-minit-sah" class="btn btn-success" data-status="SAH">SAH</button>
         @endif
-        <button id="btn-tutup" type="button" class="btn btn-link" style="color:#dd4b39;" data-dismiss="modal" aria-label="Close">BATAL</button>
-        <td><a href="http://localhost/Laravel/test%20pdf.php"><button>CETAK</button></a></td> <!-- button for salinan-->
+        <div class="form-group">
+        <a class="btn btn-primary" target="_blank" href="{{ url("pdf_cetak_inbox",[Crypt::encrypt($minitcurai->id)]) }}">CETAK</a>
+        </div> <!-- button for salinan-->
     </form>
 </div>
