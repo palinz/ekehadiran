@@ -15,7 +15,7 @@ class MinitCuraiController extends BaseController
 {
     public function index()
     {
-    //    return $this->renderView('minitcurai.index');
+        return $this->renderView('minitcurai.index');
     }
 
     public function create()
