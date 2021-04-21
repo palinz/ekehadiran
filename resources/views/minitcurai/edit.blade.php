@@ -78,8 +78,6 @@
         <button id="btn-minit-pulang" class="btn btn-success" data-status="PULANG">PULANG</button>
         <button id="btn-minit-sah" class="btn btn-success" data-status="SAH">SAH</button>
         @endif
-       <!--div class="form-group">
-        <a class="btn btn-primary" target="_blank" href="{{ url("pdf_cetak_inbox",[Crypt::encrypt($minitcurai->id)]) }}">CETAK</a-->
-        </div> <button for salinan>
+       
     </form>
 </div>
