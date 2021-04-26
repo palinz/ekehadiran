@@ -24,6 +24,9 @@
                     <button class="btn btn-success btn-flat btn-sm btn-block btn-informasi" data-id="{{ $minit->id }}"><i class="fa fa-info"></i> Info</button>
                     @endif
                 </td>
+                <td>
+                    <a href=""><button>CETAK</button></a>
+                </td>
             </tr>
         @empty
             <tr>
