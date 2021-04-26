@@ -22,11 +22,12 @@
                     <button class="btn btn-default btn-flat btn-sm btn-kemaskini" data-id="{{ $minit->id }}"><i class="fa fa-edit"></i> Kemaskini</button>
                     @else
                     <button class="btn btn-success btn-flat btn-sm btn-block btn-informasi" data-id="{{ $minit->id }}"><i class="fa fa-info"></i> Info</button>
-                    @endif
+                    
                 </td>
                 <td>
                     <a href="pdf_cetak_inbox.blade.php"><button>CETAK</button></a>
                 </td>
+                    @endif 
             </tr>
         @empty
             <tr>
