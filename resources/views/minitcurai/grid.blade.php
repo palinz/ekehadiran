@@ -25,7 +25,7 @@
                     @endif
                 </td>
                 <td>
-                    <a href=""><button>CETAK</button></a>
+                    <a href="pdf_cetak_inbox.blade.php"><button>CETAK</button></a>
                 </td>
             </tr>
         @empty
