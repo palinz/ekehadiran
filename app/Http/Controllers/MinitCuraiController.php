@@ -119,7 +119,7 @@ class MinitCuraiController extends BaseController
         }
     }
     
-/*    public function pdf_cetak_inbox($minitcurai)
+    public function pdf_cetak_inbox($minitcurai)
     {
         $minitcurai = \DB::table("minitcurai")
                             
@@ -130,5 +130,5 @@ class MinitCuraiController extends BaseController
                           //return $pdf->download('info_learning.pdf');
         return $pdf->stream();
     } 
- */   
+    
 }
