@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use Flow;
 use Auth;
 use Carbon\Carbon;
@@ -117,6 +118,12 @@ class MinitCuraiController extends BaseController
             ]);
             MinitCurai::majukan($minitCurai, $fields);
         }
+    }
+
+    public function cetak()
+    {
+        $pdf = PDF::loadView('laporan.cetak');
+        return $pdf->download('invoice.pdf');
     }
     /*
     public function pdf_cetak_inbox($minitcurai)

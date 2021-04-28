@@ -215,5 +215,6 @@ return [
         'WaktuBerperingkat' => App\Facades\WaktuBerperingkatFacade::class,
         'Flow' => App\Facades\FlowFacade::class,
         'LaporanRepository' => App\Facades\LaporanRepositoryFacade::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
     ],
 ];
