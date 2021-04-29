@@ -25,7 +25,7 @@
                     
                 </td>
                 <td>
-                    <a href="pdf_cetak_inbox"><button>CETAK</button></a>
+                    <button class="btn btn-success btn-flat btn-sm btn-block btn-informasi" data-id="{{ $minit->id }}"><i class="fa fa-info"></i> Info</button>
                 </td>
                     @endif 
             </tr>
