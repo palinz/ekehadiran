@@ -25,7 +25,7 @@
                     
                 </td>
                 <td>
-                    <button class="btn btn-success btn-flat btn-sm btn-block btn-informasi" data-id="{{ $minit->id }}"><i class="fa fa-info"></i> Info</button>
+                    <button class="btn btn-success btn-flat btn-sm btn-block btn-informasi" data-id=""><i class="fa fa-info"></i> Cetak</button>
                 </td>
                     @endif 
             </tr>
