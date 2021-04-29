@@ -25,7 +25,7 @@
                     
                 </td>
                 <td>
-                    <button class="btn btn-success btn-flat btn-sm btn-block btn-informasi" data-id=""><i class="fa fa-info"></i> Cetak</button>
+                    <button class="btn btn-default btn-flat btn-sm btn-block btn-cetak" data-id=""><i class="fa fa-cetak"></i> Cetak</button>
                 </td>
                     @endif 
             </tr>
