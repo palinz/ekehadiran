@@ -7,6 +7,98 @@
     <title>Cetak</title>
 </head>
 <body>
-    Cetakkan
+    <!-- logo -->
+
+<h6 class="text-center"> MINIT CURAI</h6>
+<h6 class="text-center"> MESYUARAT LUAR / BENGKEL / KURSUS / PROGRAM </h6>
+<h6 class="text-center">  JABATAN PENDIDIKAN NEGERI MELAKA</h6>
+
+<br>
+</br>
+
+
+<div class="container">
+
+  
+  <dl>
+    <dt>  &nbsp;&nbsp;&nbsp;&nbsp;1. Mesyuarat luar / Bengkel / Kursus / Program:  </dt>
+    <dd>- </dd>
+
+    <dt>  &nbsp;&nbsp;&nbsp;&nbsp;2. Anjuran: </dt>
+    <dd>- </dd>
+
+    <dt>  &nbsp;&nbsp;&nbsp;&nbsp;3. Tarikh / Masa / Tempat: </dt>
+    <dd>- </dd>
+
+    <dt>  &nbsp;&nbsp;&nbsp;&nbsp;4. Pegawai Yang Terlibat: </dt>
+    <dd>- </dd>
+
+    <dt>  &nbsp;&nbsp;&nbsp;&nbsp;5. Isu / Isu Penting Mesyuaray luar / Bengkel / Kursus / Program: 
+
+    <dt>  &nbsp;&nbsp;&nbsp;&nbsp;6. Nyatakan Tindakan Yang Mesti / Perlu Diambil: </dt>
+
+    <dd>- </dd>
+
+
+
+    <p> Tandatangan:   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Tarikh: </p>
+  
+  
+   
+    <table class="table">
+                                <tr>
+                                    <td colspan = '2' height='0'>
+                                </tr>
+                                <tr>
+                                    <td scope="col6" width=50% align="center">
+                                        ...........................................<br>
+                                         <br>
+                                        Guru Kelas<br>
+                                        
+                                    </td>
+                                    <td scope="col6" width=50% align="center">
+                                        ...........................................<br>
+                                        <br>
+                                        Guru Besar<br>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan = '2' height='100'>
+                                </tr>
+                               
+                            </table>
+    <dt>  &nbsp;&nbsp;&nbsp;&nbsp;7. Arahan / Cadangan bagi Tindakan / Keputusan oleh Pengarah/Timbalan Pengarah: <dt>  &nbsp;&nbsp;&nbsp;&nbsp;6. Nyatakan Tindakan Yang Mesti / Perlu Diambil: </dt> </dt>
+    <dd>- </dd>
+
+    <p> Tandatangan:   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Tarikh: </p>
+  
+    <table class="table">
+                                <tr>
+                                    <td colspan = '2' height='0'>
+                                </tr>
+                                <tr>
+                                    <td scope="col6" width=50% align="center">
+                                        ...........................................<br>
+                                         <br>
+                                        Guru Kelas<br>
+                                        
+                                    </td>
+                                    <td scope="col6" width=50% align="center">
+                                        ...........................................<br>
+                                        <br>
+                                        Guru Besar<br>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan = '2' height='100'>
+                                </tr>
+                               
+                            </table>
+
+
+  </dl>     
+</div>
 </body>
 </html> 
