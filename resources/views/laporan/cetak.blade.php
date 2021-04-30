@@ -5,12 +5,11 @@
   <title>MINIT CURAI 1</title>
   <style type="text/css" ></style>
 </head>
-
-<body bgcolor="#F6E9DC" style="width:100%">
-		<table width="747" border="0" align="center">
-	<tr>
-    <td width="116" align="center"><img src="LogoJPNMelaka.png"></td>
-	</tr>
+<body>
+<table width="747" border="0" align="center">
+<tr>
+<td width="116" align="center"><img src=""></td>
+</tr>
 </table>
 <table width="747" border="0" align="center">
     <tr>
@@ -110,6 +109,5 @@
                                     </td>
                                 </tr>       
 </table>
-
 </body>
 </html>
