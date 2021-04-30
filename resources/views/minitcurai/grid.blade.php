@@ -25,7 +25,7 @@
                     
                 </td>
                 <td>
-                    <button class="btn btn-default btn-flat btn-sm btn-block btn-cetak" data-id="<a class="nav-link" href="{{ url('cetak') }}">Some Text</a>"><i class="fa fa-cetak"></i> Cetak</button>
+                    <button class="btn btn-default btn-flat btn-sm btn-block btn-cetak" data-id="<a class="nav-link" href="{{ url('cetak') }}"></a>"><i class="fa fa-cetak"></i> Cetak</button>
                 </td>
                     @endif 
             </tr>
