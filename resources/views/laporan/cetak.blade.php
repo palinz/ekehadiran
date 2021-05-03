@@ -34,10 +34,6 @@
 	<td>6. &nbsp;&nbsp;&nbsp;
 	Nyatakan Tindakan Yang Mesti / Perlu Diambil:</td>
 </tr>
-
-<tr>
-                                    <td colspan = '6' height='0'>
-                                </tr>
                                 <tr>
                                     <td colspan = '6' height='0'>Tanda Tangan Pegawai</td>
                                     <td colspan = '6' height='0'>Tarikh</td>
