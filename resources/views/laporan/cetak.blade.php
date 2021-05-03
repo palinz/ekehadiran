@@ -9,24 +9,11 @@
 <h5 align=center>MINIT CURAI</h5>
 <h5 align=center>MESYUARAT LUAR / BENGKEL / KURSUS / PROGRAM</h5>
 <h5 align=center>JABATAN PENDIDIKAN NEGERI MELAKA</h5>
-<table width="100%" border="2" align="center">
-    <tr>
-    <td align="center" class="style6">	
-    <p><strong>MINIT CURAI </strong></p></td>
-	</tr>
-    <tr>
-    <td align="center" class="style6">	
-    <p><strong>MESYUARAT LUAR / BENGKEL / KURSUS / PROGRAM </strong></p></td>
-	</tr>
-    <tr>
-    <td align="center" class="style6">	
-    <p><strong>JABATAN PENDIDIKAN NEGERI MELAKA </strong></p></td>
-	</tr> 
-				
-	<tr>
-	  <td colspan="2" align="left"  valign="top" class="style6"><p>1. &nbsp;&nbsp;&nbsp;
-      Mesyuarat luar / Bengkel / Kursus / Program:</p>      </td>
-    </tr>
+<table width="100%" border="2" align="center">		
+<tr>
+  <td><p>1. &nbsp;&nbsp;&nbsp;
+   Mesyuarat luar / Bengkel / Kursus / Program:</p></td>
+</tr>
 	<tr>
 	  <td colspan="2" align="left"  valign="top" class="style6"><p>2. &nbsp;&nbsp;&nbsp;
       Anjuran:</p>      </td>
