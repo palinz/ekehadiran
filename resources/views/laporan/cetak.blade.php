@@ -34,8 +34,6 @@
 	<td>6. &nbsp;&nbsp;&nbsp;
 	Nyatakan Tindakan Yang Mesti / Perlu Diambil:</td>
 </tr>                            
-</table>
-<table width="100%" border="2" align="center">
 <tr>
 	<td>Tanda Tangan Pegawai</td>
 	<td>Tarikh</td>
