@@ -6,9 +6,9 @@
   <style type="text/css" ></style>
 </head>
 <body>
-<h6>MINIT CURAI</h6>
-<h6>MESYUARAT LUAR / BENGKEL / KURSUS / PROGRAM</h6>
-<h6>JABATAN PENDIDIKAN NEGERI MELAKA</h6>
+<h5 align=center>MINIT CURAI</h5>
+<h5 align=center>MESYUARAT LUAR / BENGKEL / KURSUS / PROGRAM</h5>
+<h5 align=center>JABATAN PENDIDIKAN NEGERI MELAKA</h5>
 <table width="100%" border="2" align="center">
     <tr>
     <td align="center" class="style6">	
