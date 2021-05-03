@@ -11,28 +11,28 @@
 <h5 align=center>JABATAN PENDIDIKAN NEGERI MELAKA</h5>
 <table width="100%" border="2" align="center">		
 <tr>
-	<td><p>1. &nbsp;&nbsp;&nbsp;
-	Mesyuarat luar / Bengkel / Kursus / Program:</p></td>
+	<td>1. &nbsp;&nbsp;&nbsp;
+	Mesyuarat luar / Bengkel / Kursus / Program:</td>
 </tr>
 <tr>
-	<td><p>2. &nbsp;&nbsp;&nbsp;
-	Anjuran:</p></td>
+	<td>2. &nbsp;&nbsp;&nbsp;
+	Anjuran:</td>
 </tr>
 <tr>
-	<td><p>3. &nbsp;&nbsp;&nbsp;
-	Tarikh / Masa / Tempat:</p></td>
+	<td>3. &nbsp;&nbsp;&nbsp;
+	Tarikh / Masa / Tempat:</td>
 </tr>
 <tr>
-	<td><p>4. &nbsp;&nbsp;&nbsp;
-	Pegawai Yang Terlibat:</p></td>
+	<td>4. &nbsp;&nbsp;&nbsp;
+	Pegawai Yang Terlibat:</td>
 </tr>
 <tr>
-	<td><p>5. &nbsp;&nbsp;&nbsp;
-	Isu / Isu Penting Mesyuarat luar / Bengkel / Kursus / Program:</p></td>
+	<td>5. &nbsp;&nbsp;&nbsp;
+	Isu / Isu Penting Mesyuarat luar / Bengkel / Kursus / Program:</td>
 </tr>
 <tr>
-	<td><p>6. &nbsp;&nbsp;&nbsp;
-	Nyatakan Tindakan Yang Mesti / Perlu Diambil:</p>      </td>
+	<td>6. &nbsp;&nbsp;&nbsp;
+	Nyatakan Tindakan Yang Mesti / Perlu Diambil:</td>
 </tr>
 
 </table>
