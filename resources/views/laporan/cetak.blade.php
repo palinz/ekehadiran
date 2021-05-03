@@ -6,7 +6,7 @@
   <style type="text/css" ></style>
 </head>
 <body>
-<table width="747" border="0" align="center">
+<table width="747" border="2" align="center">
     <tr>
     <td colspan="" align="center" class="style6">	
     <p><strong>MINIT CURAI </strong></p></td>
