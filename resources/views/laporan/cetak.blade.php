@@ -35,7 +35,7 @@
 	Nyatakan Tindakan Yang Mesti / Perlu Diambil:</td>
 </tr>                            
 </table>
-<table width="100%" border="0" align="center">
+<table width="100%" border="2" align="center">
                                 <tr>
                                     <td colspan = '6' height='0'>
                                 </tr>
@@ -54,27 +54,6 @@
     <tr>
 	    <td colspan="6" align="left"  valign="top" class="style6">Arahan / Cadangan bagi Tindakan / Keputusan oleh Pengarah/Timbalan Pengarah:</td>
    	</tr>
-    <tr><td colspan="6" align="left" class="style6"><p>&nbsp;</p></td></tr>
-    <tr><td colspan="6" align="left" class="style6"><p>&nbsp;</p></td></tr>	
-    <tr><td colspan="6" align="left" class="style6"><p>&nbsp;</p></td></tr>
-    <tr><td colspan="6" align="left" class="style6"><p>&nbsp;</p></td></tr>
-    <tr><td colspan="6" align="left" class="style6"><p>&nbsp;</p></td></tr>
-       <tr>
-                                    <td colspan = '6' height='0'>
-                                </tr>
-                                <tr>
-                                    <td colspan = '6' height='0'>Tanda Tangan Pengarah / Timbalan Pengarah</td>
-                                    <td colspan = '6' height='0'>Tarikh</td>
-                                </tr>
-                                    <td colspan = '6' height='0'><br><br>
-                                        .................................................
-                                        <br><br><br>
-                                    </td>
-                                    <td colspan = '6' height='0'><br><br>
-                                        .................................................
-                                        <br><br><br>
-                                    </td>
-                                </tr>       
 </table>
 
 
