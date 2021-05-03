@@ -34,43 +34,7 @@
 	<td>6. &nbsp;&nbsp;&nbsp;
 	Nyatakan Tindakan Yang Mesti / Perlu Diambil:</td>
 </tr>
-                                <tr>
-                                    <td>Tanda Tangan Pegawai</td>
-                                    <td>Tarikh</td>
-                                </tr>
-                                    <td><br><br>
-                                        ................................................
-                                        <br><br>
-                                    </td>
-                                    <td><br><br>
-                                        ................................................
-                                        <br><br>
-                                    </td>
-    <tr>
-	    <td>Arahan / Cadangan bagi Tindakan / Keputusan oleh Pengarah/Timbalan Pengarah:</td>
-   </tr>
-    <tr><td>&nbsp;</td></tr>
-    <tr><td>&nbsp;</td></tr>	
-    <tr><td>&nbsp;</td></tr>
-    <tr><td>&nbsp;</td></tr>
-    <tr><td>&nbsp;</td></tr>
-       <tr>
-                                    <td>
-                                </tr>
-                                <tr>
-                                    <td>Tanda Tangan Pengarah / Timbalan Pengarah</td>
-                                    <td>Tarikh</td>
-                                </tr>
-                                    <td><br><br>
-                                        .................................................
-                                        <br><br><br>
-                                    </td>
-                                    <td><br><br>
-                                        .................................................
-                                        <br><br><br>
-                                    </td>
-                                </tr>       
-
+                            
 </table>
 </body>
 </html>
