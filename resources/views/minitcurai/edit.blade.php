@@ -72,7 +72,8 @@
         </table>
         <button class="btn btn-success btn-kemaskini-simpan" type="submit">SIMPAN</button>
         <button class="btn btn-success btn-cetak" type="">CETAK</button>
-        <button class="btn btn-default btn-flat btn-sm btn-block btn-cetak" data-id="<a class="nav-link" href="{{ url('/minitcurai/{minitCurai}/cetak') }}"></a><i class="fa fa-cetak"></i> Cetak</button>
+        <!-- <button class="btn btn-default btn-flat btn-sm btn-block btn-cetak" data-id="<a class="nav-link" href="{{ url('/minitcurai/{minitCurai}/cetak') }}"></a><i class="fa fa-cetak"></i> Cetak</button> -->
+        <a href="{{ url('/minitcurai/{minitCurai}/cetak') }}"></a><i class="fa fa-cetak"></i> Cetak>
        
        @if($minitCurai->flag == $MinitCurai::DERAF || $minitCurai->flag == $MinitCurai::PULANG)
         <button id="btn-minit-hantar" class="btn btn-success">HANTAR</button>
