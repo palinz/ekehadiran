@@ -72,8 +72,9 @@
         </table>
         <button class="btn btn-success btn-kemaskini-simpan" type="submit">SIMPAN</button>
         <button class="btn btn-success btn-cetak" type="">CETAK</button>
-        
-        @if($minitCurai->flag == $MinitCurai::DERAF || $minitCurai->flag == $MinitCurai::PULANG)
+        <button class="btn btn-default btn-flat btn-sm btn-block btn-cetak" data-id="<a class="nav-link" href="{{ url('/minitcurai/{minitCurai}/cetak') }}"></a><i class="fa fa-cetak"></i> Cetak</button>
+       
+       @if($minitCurai->flag == $MinitCurai::DERAF || $minitCurai->flag == $MinitCurai::PULANG)
         <button id="btn-minit-hantar" class="btn btn-success">HANTAR</button>
         @endif
         @if(Auth::user()->anggota->pegawaiYangDinilai->count() > 0 && Auth::user()->anggota_id != $minitCurai->anggota_id)
