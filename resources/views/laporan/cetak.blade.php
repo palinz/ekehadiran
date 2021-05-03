@@ -57,6 +57,22 @@
 	Arahan / Cadangan bagi Tindakan / Keputusan oleh Pengarah / Timbalan Pengarah :</td>
 </tr>
 </table>
+<table width="100%" border="2" align="center">
+<tr>
+	<td>Tanda Tangan Pengarah / Timbalan Pengarah</td>
+        <td>Tarikh</td>
+</tr>
+<tr>
+	<td><br>
+        ................................................
+        <br>
+        </td>
+        <td><br>
+        ................................................
+        <br>
+        </td>
+</tr>
+</table>
 
 </body>
 </html>
