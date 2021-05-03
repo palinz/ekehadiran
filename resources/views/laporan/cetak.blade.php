@@ -44,12 +44,6 @@
 	  <td colspan="2" align="left"  valign="top" class="style6"><p>6. &nbsp;&nbsp;&nbsp;
       Nyatakan Tindakan Yang Mesti / Perlu Diambil:</p>      </td>
     </tr>
-    <tr><td colspan="6" align="left" class="style6"><p>&nbsp;</p></td></tr>
-    <tr><td colspan="6" align="left" class="style6"><p>&nbsp;</p></td></tr>			
-  	<tr>
-    	<td width="36" align="left" class="style6">&nbsp;</td>
-   	  <td colspan="5" align="left" class="style6"><br></td>
-  	</tr>
 </table>
 </body>
 </html>
