@@ -6,22 +6,22 @@
   <style type="text/css" ></style>
 </head>
 <body>
-<table width="747" border="2" align="center">
+<table width="100%" border="2" align="center">
     <tr>
-    <td colspan="" align="center" class="style6">	
+    <td align="center" class="style6">	
     <p><strong>MINIT CURAI </strong></p></td>
 	</tr>
     <tr>
-    <td colspan="" align="center" class="style6">	
+    <td align="center" class="style6">	
     <p><strong>MESYUARAT LUAR / BENGKEL / KURSUS / PROGRAM </strong></p></td>
 	</tr>
     <tr>
-    <td colspan="" align="center" class="style6">	
+    <td align="center" class="style6">	
     <p><strong>JABATAN PENDIDIKAN NEGERI MELAKA </strong></p></td>
 	</tr>
   	<tr>	
   	</tr>  
-	<tr><td colspan="2" align="left" class="style6"><p>&nbsp;</p></td></tr>			
+	<tr><td colspan="2" align="left" class="style6"><p>&nbsp;1</p></td></tr>			
 	<tr>
 	  <td colspan="2" align="left"  valign="top" class="style6"><p>1. &nbsp;&nbsp;&nbsp;
       Mesyuarat luar / Bengkel / Kursus / Program:</p>      </td>
