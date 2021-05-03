@@ -13,6 +13,9 @@
 </table>
 <table width="747" border="0" align="center">
     <tr>
+    <td width="116" align="center"><img src=""></td>
+    </tr>
+    <tr>
     <td colspan="6" align="center" class="style6">	
     <p><strong>MINIT CURAI </strong></p></td>
 	</tr>
