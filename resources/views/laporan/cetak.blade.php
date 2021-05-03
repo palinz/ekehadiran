@@ -36,24 +36,21 @@
 </tr>                            
 </table>
 <table width="100%" border="2" align="center">
-                                <tr>
-                                    <td colspan = '6' height='0'>
-                                </tr>
-                                <tr>
-                                    <td colspan = '6' height='0'>Tanda Tangan Pegawai</td>
-                                    <td colspan = '6' height='0'>Tarikh</td>
-                                </tr>
-                                    <td colspan = '6' height='0'><br><br>
-                                        ................................................
-                                        <br><br>
-                                    </td>
-                                    <td colspan = '6' height='0'><br><br>
-                                        ................................................
-                                        <br><br>
-                                    </td>
-    <tr>
-	    <td colspan="6" align="left"  valign="top" class="style6">Arahan / Cadangan bagi Tindakan / Keputusan oleh Pengarah/Timbalan Pengarah:</td>
-   	</tr>
+<tr>
+	<td>Tanda Tangan Pegawai</td>
+	<td>Tarikh</td>
+        <td><br><br>
+        ................................................
+        <br><br>
+        </td>
+        <td><br><br>
+        ................................................
+        <br><br>
+        </td>
+</tr>
+<tr>
+	<td>Arahan / Cadangan bagi Tindakan / Keputusan oleh Pengarah/Timbalan Pengarah:</td>
+</tr>
 </table>
 
 
