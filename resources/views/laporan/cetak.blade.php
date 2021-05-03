@@ -12,46 +12,58 @@
 <table width="100%" border="2" align="center">		
 <tr>
 	<td>1. &nbsp;&nbsp;&nbsp;
-	Mesyuarat luar / Bengkel / Kursus / Program:
-	<br><br>
-	&nbsp;&nbsp;&nbsp:</td>
+	Mesyuarat luar / Bengkel / Kursus / Program:</td>
 </tr>
 <tr>
-	<td>&nbsp;&nbsp;&nbsp;
-	:</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
 	<td>2. &nbsp;&nbsp;&nbsp;
 	Anjuran:</td>
 </tr>
 <tr>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
 	<td>3. &nbsp;&nbsp;&nbsp;
 	Tarikh / Masa / Tempat:</td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
 	<td>4. &nbsp;&nbsp;&nbsp;
 	Pegawai Yang Terlibat:</td>
 </tr>
 <tr>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
 	<td>5. &nbsp;&nbsp;&nbsp;
 	Isu / Isu Penting Mesyuarat luar / Bengkel / Kursus / Program:</td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
 	<td>6. &nbsp;&nbsp;&nbsp;
 	Nyatakan Tindakan Yang Mesti / Perlu Diambil:</td>
 </tr>
+<tr>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+</tr>
 </table>
 <table width="100%" border="2" align="center">
 <tr>
 	<td>Tanda Tangan Pegawai</td>
-        <td>Tarikh</td>
+        <td align= "center">Tarikh</td>
 </tr>
 <tr>
 	<td><br>
         ................................................
         <br>
         </td>
-        <td><br>
+        <td align="center"><br>
         ................................................
         <br>
         </td>
@@ -61,6 +73,9 @@
 <tr>
 	<td> &nbsp;&nbsp;&nbsp;
 	Arahan / Cadangan bagi Tindakan / Keputusan oleh Pengarah / Timbalan Pengarah :</td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;&nbsp;</td>
 </tr>
 </table>
 <table width="100%" border="2" align="center">
