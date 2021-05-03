@@ -51,6 +51,12 @@
         </td>
 </tr>
 </table>
+<table width="100%" border="2" align="center">		
+<tr>
+	<td> &nbsp;&nbsp;&nbsp;
+	Arahan / Cadangan bagi Tindakan / Keputusan oleh Pengarah / Timbalan Pengarah :</td>
+</tr>
+</table>
 
 </body>
 </html>
