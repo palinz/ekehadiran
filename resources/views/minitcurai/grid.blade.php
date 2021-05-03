@@ -25,8 +25,10 @@
                     
                 </td>
                 <td>
-                    <button class="btn btn-default btn-flat btn-sm btn-block btn-cetak" data-id="<a class="nav-link" href="{{ url('laporan/cetak') }}"></a><i class="fa fa-cetak"></i> Cetak</button>
-                </td>
+                    <button class="btn btn-default btn-flat btn-sm btn-block btn-cetak" data-id="<a class="nav-link" href="{{ url('/minitcurai/{minitCurai}/cetak') }}"></a><i class="fa fa-cetak"></i> Cetak</button>
+               
+               
+               </td>
                     @endif 
             </tr>
         @empty
