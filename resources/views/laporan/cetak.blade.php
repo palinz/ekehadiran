@@ -12,9 +12,9 @@
 <table width="100%" border="2" align="center">		
 <tr>
 	<td>1. &nbsp;&nbsp;&nbsp;
-	Mesyuarat luar / Bengkel / Kursus / Program:</td>
+	Mesyuarat luar / Bengkel / Kursus / Program:
 	<br><br>
-	<td>&nbsp;&nbsp;&nbsp:</td>
+	&nbsp;&nbsp;&nbsp:</td>
 </tr>
 <tr>
 	<td>&nbsp;&nbsp;&nbsp;
