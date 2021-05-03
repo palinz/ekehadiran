@@ -11,29 +11,30 @@
 <h5 align=center>JABATAN PENDIDIKAN NEGERI MELAKA</h5>
 <table width="100%" border="2" align="center">		
 <tr>
-  <td><p>1. &nbsp;&nbsp;&nbsp;
-   Mesyuarat luar / Bengkel / Kursus / Program:</p></td>
+	<td><p>1. &nbsp;&nbsp;&nbsp;
+	Mesyuarat luar / Bengkel / Kursus / Program:</p></td>
 </tr>
-	<tr>
-	  <td colspan="2" align="left"  valign="top" class="style6"><p>2. &nbsp;&nbsp;&nbsp;
-      Anjuran:</p>      </td>
-    </tr>
-    <tr>
-	  <td colspan="2" align="left"  valign="top" class="style6"><p>3. &nbsp;&nbsp;&nbsp;
-      Tarikh / Masa / Tempat:</p>      </td>
-    </tr>
-	<tr>
-	  <td colspan="2" align="left"  valign="top" class="style6"><p>4. &nbsp;&nbsp;&nbsp;
-      Pegawai Yang Terlibat:</p>      </td>
-    </tr>
-	<tr>
-	  <td colspan="2" align="left"  valign="top" class="style6"><p>5. &nbsp;&nbsp;&nbsp;
-      Isu / Isu Penting Mesyuarat luar / Bengkel / Kursus / Program:</p>      </td>
-    </tr>
-	<tr>
-	  <td colspan="2" align="left"  valign="top" class="style6"><p>6. &nbsp;&nbsp;&nbsp;
-      Nyatakan Tindakan Yang Mesti / Perlu Diambil:</p>      </td>
-    </tr>
+<tr>
+	<td><p>2. &nbsp;&nbsp;&nbsp;
+	Anjuran:</p></td>
+</tr>
+<tr>
+	<td><p>3. &nbsp;&nbsp;&nbsp;
+	Tarikh / Masa / Tempat:</p></td>
+</tr>
+<tr>
+	<td><p>4. &nbsp;&nbsp;&nbsp;
+	Pegawai Yang Terlibat:</p></td>
+</tr>
+<tr>
+	<td><p>5. &nbsp;&nbsp;&nbsp;
+	Isu / Isu Penting Mesyuarat luar / Bengkel / Kursus / Program:</p></td>
+</tr>
+<tr>
+	<td><p>6. &nbsp;&nbsp;&nbsp;
+	Nyatakan Tindakan Yang Mesti / Perlu Diambil:</p>      </td>
+</tr>
+
 </table>
 </body>
 </html>
