@@ -18,10 +18,8 @@
     <tr>
     <td align="center" class="style6">	
     <p><strong>JABATAN PENDIDIKAN NEGERI MELAKA </strong></p></td>
-	</tr>
-  	<tr>	
-  	</tr>  
-	<tr><td colspan="2" align="left" class="style6"><p>&nbsp;1</p></td></tr>			
+	</tr> 
+				
 	<tr>
 	  <td colspan="2" align="left"  valign="top" class="style6"><p>1. &nbsp;&nbsp;&nbsp;
       Mesyuarat luar / Bengkel / Kursus / Program:</p>      </td>
