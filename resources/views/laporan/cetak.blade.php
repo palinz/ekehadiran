@@ -53,8 +53,27 @@
         <br><br>
         </td>
 </tr>
+</table>
 <tr>
 	<td>Arahan / Cadangan bagi Tindakan / Keputusan oleh Pengarah/Timbalan Pengarah:</td>
+</tr>
+<table width="100%" border="2" align="center">
+<tr>
+	<td>Tanda Tangan Pegawai</td>
+        <td><br><br>
+        ................................................
+        <br><br>
+        </td>
+</tr>
+<tr>
+	<td><br><br>
+        ................................................
+        <br><br>
+        </td>
+        <td><br><br>
+        ................................................
+        <br><br>
+        </td>
 </tr>
 </table>
 
