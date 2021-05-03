@@ -38,20 +38,13 @@
 <table width="100%" border="2" align="center">
 <tr>
 	<td>Tanda Tangan Pegawai</td>
-	<td>Tarikh</td>
-        <td><br><br>
-        ................................................
-        <br><br>
-        </td>
         <td><br><br>
         ................................................
         <br><br>
         </td>
 </tr>
 <tr>
-	<td>Tanda Tangan Pegawai</td>
-	<td>Tarikh</td>
-        <td><br><br>
+	<td><br><br>
         ................................................
         <br><br>
         </td>
