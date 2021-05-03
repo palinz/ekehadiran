@@ -8,15 +8,15 @@
 <body>
 <table width="747" border="0" align="center">
     <tr>
-    <td colspan="2" align="center" class="style6">	
+    <td colspan="" align="center" class="style6">	
     <p><strong>MINIT CURAI </strong></p></td>
 	</tr>
     <tr>
-    <td colspan="2" align="center" class="style6">	
+    <td colspan="" align="center" class="style6">	
     <p><strong>MESYUARAT LUAR / BENGKEL / KURSUS / PROGRAM </strong></p></td>
 	</tr>
     <tr>
-    <td colspan="2" align="center" class="style6">	
+    <td colspan="" align="center" class="style6">	
     <p><strong>JABATAN PENDIDIKAN NEGERI MELAKA </strong></p></td>
 	</tr>
   	<tr>	
