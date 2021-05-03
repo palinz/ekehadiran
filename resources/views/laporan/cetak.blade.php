@@ -54,10 +54,6 @@
         </td>
 </tr>
 </table>
-<tr>
-	<td>Arahan / Cadangan bagi Tindakan / Keputusan oleh Pengarah/Timbalan Pengarah:</td>
-</tr>
-
 
 </body>
 </html>
