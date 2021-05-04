@@ -123,7 +123,7 @@ class MinitCuraiController extends BaseController
     public function cetak()
     {
         $pdf = PDF::loadView('laporan.cetak');
-        return $pdf->download('invoice.pdf');
+        return $pdf->download('MinitCuraiJPNMelaka.pdf');
     }
     /*
     public function pdf_cetak_inbox($minitcurai)
