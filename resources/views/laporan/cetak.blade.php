@@ -77,8 +77,7 @@
 <br>
 <table width="100%" border="" align="center">		
 <tr>
-	<td> &nbsp;&nbsp;&nbsp;
-	Arahan / Cadangan bagi Tindakan / Keputusan oleh Pengarah / Timbalan Pengarah :</td>
+	<td>Arahan / Cadangan bagi Tindakan / Keputusan oleh Pengarah / Timbalan Pengarah :</td>
 </tr>
 <tr>
 	<td>&nbsp;&nbsp;&nbsp;</td>
