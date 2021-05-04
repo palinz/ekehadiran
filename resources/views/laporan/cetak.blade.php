@@ -9,7 +9,7 @@
 <h5 align=center>MINIT CURAI</h5>
 <h5 align=center>MESYUARAT LUAR / BENGKEL / KURSUS / PROGRAM</h5>
 <h5 align=center>JABATAN PENDIDIKAN NEGERI MELAKA</h5>
-<table width="100%" border="2" align="center">		
+<table width="100%" border="" align="center">		
 <tr>
 	<td>1. &nbsp;&nbsp;&nbsp;
 	Mesyuarat luar / Bengkel / Kursus / Program:</td>
@@ -53,7 +53,7 @@
 	<td>&nbsp;&nbsp;&nbsp;</td>
 </tr>
 </table>
-<table width="100%" border="2" align="center">
+<table width="100%" border="" align="center">
 <tr>
 	<td>Tanda Tangan Pegawai</td>
         <td align= "center">Tarikh</td>
@@ -69,7 +69,7 @@
         </td>
 </tr>
 </table>
-<table width="100%" border="2" align="center">		
+<table width="100%" border="" align="center">		
 <tr>
 	<td> &nbsp;&nbsp;&nbsp;
 	Arahan / Cadangan bagi Tindakan / Keputusan oleh Pengarah / Timbalan Pengarah :</td>
@@ -81,14 +81,14 @@
 <table width="100%" border="2" align="center">
 <tr>
 	<td>Tanda Tangan Pengarah / Timbalan Pengarah</td>
-        <td>Tarikh</td>
+        <td align="center">Tarikh</td>
 </tr>
 <tr>
 	<td><br>
         ................................................
         <br>
         </td>
-        <td><br>
+        <td align="center"><br>
         ................................................
         <br>
         </td>
