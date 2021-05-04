@@ -125,6 +125,16 @@ class MinitCuraiController extends BaseController
         $pdf = PDF::loadView('laporan.cetak');
         return $pdf->download('MinitCuraiJPNMelaka.pdf');
     }
+    
+    public function cetak()
+    {
+        $minitcurai = \DB::table("minitcurai")
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadView("pdf.MinitCuraiJPNMelaka", [ 'tajuk' => $tajuk, 'anjuran' => $anjuran, 
+        'tarikh' => $tarikh, 'pegawai_terlibat' => $pegawai_terlibat, 'isu' => $isu, 'tindakan' => $tindakan, 'cadangan' => $cadangan]);
+        return $pdf->stream();
+    } 
+    
     /*
     public function pdf_cetak_inbox($minitcurai)
     {
