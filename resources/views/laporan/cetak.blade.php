@@ -53,6 +53,9 @@
 	<td>&nbsp;&nbsp;&nbsp;</td>
 </tr>
 </table>
+<br>
+<br>
+<br>
 <table width="100%" border="" align="center">
 <tr>
 	<td>Tanda Tangan Pegawai</td>
@@ -69,6 +72,9 @@
         </td>
 </tr>
 </table>
+<br>
+<br>
+<br>
 <table width="100%" border="" align="center">		
 <tr>
 	<td> &nbsp;&nbsp;&nbsp;
@@ -78,7 +84,10 @@
 	<td>&nbsp;&nbsp;&nbsp;</td>
 </tr>
 </table>
-<table width="100%" border="2" align="center">
+<br>
+<br>
+<br>
+<table width="100%" border="" align="center">
 <tr>
 	<td>Tanda Tangan Pengarah / Timbalan Pengarah</td>
         <td align="center">Tarikh</td>
