@@ -24,11 +24,7 @@
                     <button class="btn btn-success btn-flat btn-sm btn-block btn-informasi" data-id="{{ $minit->id }}"><i class="fa fa-info"></i> Info</button>
                     
                 </td>
-                <td>
-                    <button class="btn btn-default btn-flat btn-sm btn-block btn-cetak" data-id="<a class="nav-link" href="{{ url('/minitcurai/{minitCurai}/cetak') }}"></a><i class="fa fa-cetak"></i> Cetak</button>
-               
-               
-               </td>
+
                     @endif 
             </tr>
         @empty
