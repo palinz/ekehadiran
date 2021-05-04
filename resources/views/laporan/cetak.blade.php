@@ -62,11 +62,11 @@
         <td align= "center">Tarikh</td>
 </tr>
 <tr>
-	<td><br>
+	<td><br><br>
         ................................................
         <br>
         </td>
-        <td align="center"><br>
+        <td align="center"><br><br>
         ................................................
         <br>
         </td>
@@ -93,11 +93,11 @@
         <td align="center">Tarikh</td>
 </tr>
 <tr>
-	<td><br>
+	<td><br><br>
         ................................................
         <br>
         </td>
-        <td align="center"><br>
+        <td align="center"><br><br>
         ................................................
         <br>
         </td>
