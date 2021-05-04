@@ -16,42 +16,42 @@
 	Mesyuarat luar / Bengkel / Kursus / Program:</td>
 </tr>
 <tr>
-	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td>{{ $minitcurai->tajuk}}</td>
 </tr>
 <tr>
 	<td>2. &nbsp;&nbsp;&nbsp;
 	Anjuran:</td>
 </tr>
 <tr>
-	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td>{{ $minitcurai->anjuran}}</td>
 </tr>
 <tr>
 	<td>3. &nbsp;&nbsp;&nbsp;
 	Tarikh / Masa / Tempat:</td>
 </tr>
 <tr>
-	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td>{{ $minitcurai->tarikh}}</td>
 </tr>
 <tr>
 	<td>4. &nbsp;&nbsp;&nbsp;
 	Pegawai Yang Terlibat:</td>
 </tr>
 <tr>
-	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td>{{ $minitcurai->pegawai_terlibat}}</td>
 </tr>
 <tr>
 	<td>5. &nbsp;&nbsp;&nbsp;
 	Isu / Isu Penting Mesyuarat luar / Bengkel / Kursus / Program:</td>
 </tr>
 <tr>
-	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td>{{ $minitcurai->isu}}</td>
 </tr>
 <tr>
 	<td>6. &nbsp;&nbsp;&nbsp;
 	Nyatakan Tindakan Yang Mesti / Perlu Diambil:</td>
 </tr>
 <tr>
-	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td>{{ $minitcurai->tindakan}}</td>
 </tr>
 </table>
 <br>
@@ -81,7 +81,7 @@
 	<td>Arahan / Cadangan bagi Tindakan / Keputusan oleh Pengarah / Timbalan Pengarah :</td>
 </tr>
 <tr>
-	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td>{{ $minitcurai->cadangan}}</td>
 </tr>
 </table>
 <br>
