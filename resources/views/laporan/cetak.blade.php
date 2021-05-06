@@ -16,7 +16,7 @@
 	Mesyuarat luar / Bengkel / Kursus / Program:</td>
 </tr>
 <tr>
-	<td>{{ $cetak->tajuk}}</td>
+	<td></td>
 </tr>
 <tr>
 	<td>2. &nbsp;&nbsp;&nbsp;
