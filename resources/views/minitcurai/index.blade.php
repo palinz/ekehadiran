@@ -406,6 +406,35 @@
                 });
             });
         });
+        
+        $('#modal-edit-minit-curai').on('hidden.bs.modal', function(e) {
+            e.preventDefault();
+            $(this).find('.modal-body').html('<h4><i class="fa fa-refresh fa-spin"></i> Loading...</h4>');
+        })
+
+        $('#modal-edit-minit-curai').on('click', "#frm-cetak-minit-curai", function (e) {
+            e.preventDefault();
+			var formData = new FormData(this);
+
+
+		$.ajaxSetup({
+			url: base_url+'rpc/minitcurai/'+minit_id+'/cetak',
+			type: 'POST',
+			data: formData,
+			beforeSend: function() {
+			  console.log('printing ...');
+			},
+			complete: function() {
+			  console.log('printed!');
+			}
+		  });
+
+		  $.ajax({
+			success: function(viewContent) {
+			  $.print(viewContent); // This is where the script calls the printer to print the viwe's content.
+			}
+		  });
+		});
 
         $('#modal-edit-minit-curai').on('click', "#btn-minit-sah", function(e) {
             e.preventDefault();
