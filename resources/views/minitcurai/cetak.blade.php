@@ -11,13 +11,13 @@
 		<table class="table table-bordered">
             		<tbody>
                 		<tr>
-					<h5 align=center>MINIT CURAI</h5>
+					<td class="col-md-3"><b>MINIT CURAI</td>
 				</tr>
 				<tr>
-					<h5 align=center>MESYUARAT LUAR / BENGKEL / KURSUS / PROGRAM</h5>
+					<td class="col-md-3"><b>MESYUARAT LUAR / BENGKEL / KURSUS / PROGRAM</td>
 				</tr>
 				<tr>
-					<h5 align=center>JABATAN PENDIDIKAN NEGERI MELAKA</h5>
+					<td class="col-md-3"><b>JABATAN PENDIDIKAN NEGERI MELAKA</td>
 				</tr>
 				<tr>
 				    <td class="col-md-3"><b>Tajuk</b></td>
