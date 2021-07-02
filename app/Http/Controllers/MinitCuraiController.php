@@ -120,12 +120,27 @@ class MinitCuraiController extends BaseController
             MinitCurai::majukan($minitCurai, $fields);
         }
     }
+    public function cetak(MinitCurai $minitCurai)
+    {
+        $pdf = PDF::loadView('minitcurai.cetak', compact('minitCurai'));
+		return $pdf->download('MinitCuraiJPNMelaka.pdf');
+		
+    }
+    /*
+    public function index(MinitCurai $minitCurai){
+        $values = $minitCurai->data; //I want to print this $values variable.
 
+        dd($values); // die and dump $values
+
+    }
+    /*
+    /*
     public function cetak(MinitCurai $minitCurai)
     {
         $pdf = PDF::loadView('laporan.cetak', compact('minitCurai'));
         return $pdf->download('MinitCuraiJPNMelaka.pdf');
     }
+    */
     /*
     public function cetak()
     {
