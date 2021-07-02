@@ -59,8 +59,11 @@
 						</td>
 				</tr>
 				<tr>
-						<td>Tanda Tangan Pengesahan</td>
-						<td align="center"><br><br>
+						<td>Tanda Tangan Pegesahan</td>
+						<td align= "center">Tarikh</td>
+				</tr>
+				<tr>
+						<td><br><br>
 						................................................
 						<br>
 						</td>
