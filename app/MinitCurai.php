@@ -11,6 +11,7 @@ class MinitCurai extends Model
     const HANTAR = 'HANTAR';
     const PULANG = 'PULANG';
     const SAH = 'DISAHKAN';
+    const CETAK = 'CETAK';
 
     protected $table = 'minitcurai';
 
