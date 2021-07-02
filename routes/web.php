@@ -152,6 +152,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/minitcurai/{minitCurai}/sah', 'MinitCuraiController@sah');
         Route::post('/minitcurai/{minitCurai}/forward', 'MinitCuraiController@forward');
         //Route::get("/pdf_cetak_inbox/{id}", "App\Http\Controllers\MinitCuraiController@pdf_cetak_inbox");
+        Route::get('/minitcurai/{minitCurai}/cetak', 'MinitCuraiController@cetak');
         Route::get('pdf_cetak_inbox', function()
         {
             return view('pdf_cetak_inbox');
