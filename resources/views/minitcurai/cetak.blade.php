@@ -10,29 +10,46 @@
 		</head>
 		<table class="table table-bordered">
             <tbody>
-                <tr>
-                    <td class="col-md-3"><b>Aktiviti</b></td>
-                    <td><input class="form-control" type="text" name="txtAktiviti" placeholder="Tajuk Aktiviti" value="{{ $minitCurai->tajuk }}" required></td>
-                </tr>
-                <tr>
-                    <td><b>Anjuran</b></td>
-                    <td><input class="form-control" type="text" name="txtAnjuran" placeholder="Anjuran" value="{{ $minitCurai->anjuran }}" required></td>
-                </tr>
-                <tr>
-                    <td><b>Tarikh dan Masa</b></td>
-                    <td><input id="txtTarikhCurai" class="form-control" type="date" name="txtTarikh" placeholder="Tarikh" value="{{ $minitCurai->tarikh->format('Y-m-d') }}" required></td>
-                </tr>
-                <tr>
-                    <td><b>Tempat</b></td>
-                    <td><input class="form-control" type="text" name="txtTempat" placeholder="Tempat" value="{{ $minitCurai->lokasi }}" required></td>
-                </tr>
-                <tr>
-                    <td><b>Isu</b></td>
-                    <td>
-                        <div class="col-12">
-                        <textarea class="form-control" name="txtIsu" rows="10" required>{{ $minitCurai->isu }}</textarea>
-                        </div>
-                </tr>
+                		<h5 align=center>MINIT CURAI</h5>
+				<h5 align=center>MESYUARAT LUAR / BENGKEL / KURSUS / PROGRAM</h5>
+				<h5 align=center>JABATAN PENDIDIKAN NEGERI MELAKA</h5>
+				<tr>
+				    <td class="col-md-3"><b>Tajuk</b></td>
+				    <div class="col-12">
+				    	<td><input class="form-control" type="text" name="txtAktiviti" placeholder="Tajuk Aktiviti" value="{{ $minitCurai->tajuk }}" required></td>
+				    </div>
+				</tr>
+				<tr>
+				    <td class="col-md-3"><b>Aktiviti</b></td>
+				    <div class="col-12">
+				    	<td><input class="form-control" type="text" name="txtAktiviti" placeholder="Tajuk Aktiviti" value="{{ $minitCurai->tajuk }}" required></td>
+				    </div>
+				</tr>
+				<tr>
+				    <td><b>Anjuran</b></td>
+				    <div class="col-12">
+					<td><input class="form-control" type="text" name="txtAnjuran" placeholder="Anjuran" value="{{ $minitCurai->anjuran }}" required></td>
+				    </div>
+				</tr>
+				<tr>
+				    <td><b>Tarikh dan Masa</b></td>
+				    <div class="col-12">
+				    	<td><input id="txtTarikhCurai" class="form-control" type="date" name="txtTarikh" placeholder="Tarikh" value="{{ $minitCurai->tarikh }}" required></td>
+				    </div>
+				</tr>
+				<tr>
+				    <td><b>Tempat</b></td>
+				    	<div class="col-12">
+						<input class="form-control" type="text" name="txtTempat" placeholder="Tempat" value="{{ $minitCurai->lokasi }}" required></td>
+				    	</div>
+				</tr>
+				<tr>
+				    <td><b>Isu</b></td>
+				    <td>
+					<div class="col-12">
+						<textarea class="form-control" name="txtIsu" rows="10" required>{{ $minitCurai->isu }}</textarea>
+					</div>
+				</tr>
 				<tr>
 						<td>Tanda Tangan Pegawai</td>
 						<td align= "center">Tarikh</td>
@@ -42,6 +59,9 @@
 						................................................
 						<br>
 						</td>
+				</tr>
+				<tr>
+						<td>Tanda Tangan Pengesahan</td>
 						<td align="center"><br><br>
 						................................................
 						<br>
