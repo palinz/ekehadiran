@@ -11,18 +11,9 @@
 		<table class="table table-bordered">
             		<tbody>
                 		<tr>
-					<td class="col-md-3"><b>MINIT CURAI</td>
-				</tr>
-				<tr>
-					<td class="col-md-3"><b>MESYUARAT LUAR / BENGKEL / KURSUS / PROGRAM</td>
-				</tr>
-				<tr>
-					<td class="col-md-3"><b>JABATAN PENDIDIKAN NEGERI MELAKA</td>
-				</tr>
-				<tr>
 				    <td class="col-md-3"><b>Tajuk</b></td>
 				    	<td><input class="form-control" type="text" name="txtAktiviti" placeholder="Tajuk Aktiviti" value="{{ $minitCurai->tajuk }}" required></td>
-				    </tr>
+				</tr>
 				<tr>
 				    <td class="col-md-3"><b>Aktiviti</b></td>				    
 				    	<td><input class="form-control" type="text" name="txtAktiviti" placeholder="Tajuk Aktiviti" value="{{ $minitCurai->tajuk }}" required></td>
