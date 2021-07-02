@@ -68,20 +68,20 @@
                         </div>
                     </td>
                 </tr>
-            </body>
+                </body>
         </table>
         <button class="btn btn-success btn-kemaskini-simpan" type="submit">SIMPAN</button>
         <!-- <button class="btn btn-success btn-cetak" type="">CETAK</button> -->
-        <button><a href="{{ url('/minitcurai/{minitCurai}/cetak') }}">Cetak</a></button>
+        <button><a href="{{ url('/minitcurai/'.$minitCurai->id.'/cetak') }}">Cetak</a></button>
         <!-- <a href="{{ url('/minitcurai/{minitCurai}/cetak') }}">Cetak</a> -->
-       
-       @if($minitCurai->flag == $MinitCurai::DERAF || $minitCurai->flag == $MinitCurai::PULANG)
+
+        @if($minitCurai->flag == $MinitCurai::DERAF || $minitCurai->flag == $MinitCurai::PULANG)
         <button id="btn-minit-hantar" class="btn btn-success">HANTAR</button>
         @endif
         @if(Auth::user()->anggota->pegawaiYangDinilai->count() > 0 && Auth::user()->anggota_id != $minitCurai->anggota_id)
         <button id="btn-minit-pulang" class="btn btn-success" data-status="PULANG">PULANG</button>
         <button id="btn-minit-sah" class="btn btn-success" data-status="SAH">SAH</button>
         @endif
-       
+
     </form>
 </div>

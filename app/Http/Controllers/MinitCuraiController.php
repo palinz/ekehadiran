@@ -111,7 +111,7 @@ class MinitCuraiController extends BaseController
 
     public function forward(MinitCurai $minitCurai, Request $request)
     {
-        foreach($request->comPegawai as $pegawaiId) {
+        foreach ($request->comPegawai as $pegawaiId) {
             $fields = collect([
                 "from_anggota_id" => Auth::user()->anggota_id,
                 "to_anggota_id" => $pegawaiId,
@@ -121,9 +121,9 @@ class MinitCuraiController extends BaseController
         }
     }
 
-    public function cetak()
+    public function cetak(MinitCurai $minitCurai)
     {
-        $pdf = PDF::loadView('laporan.cetak');
+        $pdf = PDF::loadView('laporan.cetak', compact('minitCurai'));
         return $pdf->download('MinitCuraiJPNMelaka.pdf');
     }
     /*
