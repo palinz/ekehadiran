@@ -72,7 +72,9 @@
         </table>
         <button class="btn btn-success btn-kemaskini-simpan" type="submit">SIMPAN</button>
         <!-- <button class="btn btn-success btn-cetak" type="">CETAK</button> -->
-        <button><a href="{{ url('/minitcurai/'.$minitCurai->id.'/cetak') }}">Cetak</a></button>
+        <button id="btn-minit-cetak" class="btn btn-success" data-status="CETAK">CETAK</button>
+
+        <!-- <button><a href="{{ url('/minitcurai/'.$minitCurai->id.'/cetak') }}">Cetak</a></button> -->
         <!-- <a href="{{ url('/minitcurai/{minitCurai}/cetak') }}">Cetak</a> -->
 
         @if($minitCurai->flag == $MinitCurai::DERAF || $minitCurai->flag == $MinitCurai::PULANG)
